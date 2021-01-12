@@ -1,0 +1,435 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Mobile */
+@media only screen and (min-width: 100px) {
+
+    h2, h3, h4, h5, h6 {
+        font-family: "Staatliches", "Helvetica", sans-serif;
+    }
+
+    p {
+        font-family: "Raleway", sans-serif;
+    }
+
+    .section {
+        min-height: 88vh;
+    }
+
+    .button-primary {
+        width: 50vw;
+        height: 6vh;
+        background-color: #1c1c1c;
+        color: #fcfcfc;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        cursor: pointer;
+        font-family: "Raleway", sans-serif;
+        transition: all 0.5s ease;
+    }
+
+    .button-primary:hover {
+        background-color: #000000;
+    }
+
+    /* Navigation - Mobile */
+    header {
+        width: 100%;
+        min-height: 8vh;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .menu {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;         
+    }
+
+    .menu-btn {
+        cursor: pointer;
+    }
+   
+    .burger-1, .burger-2, .burger-3 {
+        width: 30px;
+        height: 2px;
+        background-color: #111;
+        margin: 5px 0;
+        transition: all 0.5s ease;
+    }
+
+    .logo{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img {
+        object-fit: cover;
+        object-position: center;
+        width: 50%;
+    }
+
+    .checkout {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .checkout img {
+        object-fit: cover;
+        object-position: center;
+        width: 50%;
+    }
+
+    .checkout-counter {
+        background-color: #e60000;
+        margin-top: 1.25vh;
+        width: 6vw;
+        height: 6vw;
+        border-radius: 25px;
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-family: "Raleway", sans-serif;
+    }
+
+    .nav-list {
+        min-height: 92vh;
+        width: 100vw;
+        position: absolute;
+        top: 8vh;
+        left: -100vw;
+        font-family: "Staatliches", "Helvetica", sans-serif;
+        font-size: 2.5rem;
+        background-color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list-active {
+        left: 0;
+    }
+
+    .nav-section {
+        min-height: 40vh;
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        list-style: none;
+    }
+
+    .nav-list a{
+        color: #111;
+        text-decoration: none;
+        display: block;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list a:hover{
+        text-decoration: underline;
+    }
+
+    .nav-list li {
+        opacity: 0;
+        
+    }
+
+    @keyframes navSlide {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }        
+    }
+
+    .menu-btn-active .burger-1 {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: #e60000;
+    }
+
+    .menu-btn-active .burger-2 {
+        opacity: 0;
+    }
+
+    .menu-btn-active .burger-3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background-color: #e60000;
+    }
+
+    /* Landing Page - Mobile */
+    .landing-page {
+        min-height: 88vh;
+        background-position: center;
+        background-size: contain;
+        padding-top: 8vh;
+    }
+
+    .landing-index {
+        background-image: url(/img/landing-page-background.jpg);
+        min-height: 180vh;
+    }
+
+    .landing-left {
+        height: 84vh;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .landing-left h2 {
+        font-size: 4rem;
+        margin-top: 15vh;
+        letter-spacing: 2px;
+    }
+
+    .landing-left p {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .landing-right {
+        height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .landing-right img {
+        height: 80vh;
+    }
+
+    .button-left {
+        display: none;
+    }
+
+    /* Deck Section Index - Mobile */
+    .section-decks {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .section-decks h2 {
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .shopping-option {
+        width: 95%;
+        margin: 2rem auto 0 auto;
+        text-align: center;
+    }
+
+    .shopping-option a {
+        color: #111;
+        text-decoration: none;
+    }
+
+    .shopping-option img{
+        width: 100%;
+    }
+
+    .shopping-option p{
+        font-size: 1.25rem;
+        margin-top: .5rem;
+    }
+    
+    
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+
+    /* Navigation - Tablet */
+    .logo img {
+        width: 40%;
+    }
+
+    .checkout img {
+        width: 30%;
+    }
+
+    /* Landing Page - Tablet */
+
+    .landing-index {
+        min-height: 180vh;
+    }
+
+    .landing-left {
+        height: 65vh;
+        width: 60%;
+    }
+
+    .landing-left h2 {
+        margin-top: 20vh;
+    }
+
+    .landing-right img {
+        height: 75vh;
+    }
+
+    .button-left {
+        display: none;
+    }
+
+    /* Deck Section Index - Tablet */
+    .shopping-option {
+        width: 45%;
+    }
+
+    .section-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+
+    /* Navigation - Desktop */
+    .menu-btn {
+        display: none;
+    }
+
+    .menu {
+        display: none;        
+    }
+
+    .logo{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img {
+        object-fit: cover;
+        object-position: center;
+        width: 50%;
+    }
+
+    .checkout {
+        width: 20%;
+    }
+
+    .checkout img {
+        width: 10%;
+    }
+
+    .checkout-counter {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+
+    .nav-list {
+        min-height: 8vh;
+        width: 80%;
+        position: static;
+        font-size: 1.75rem;        
+    }
+
+    .nav-section {
+        width: 60%;
+        margin: 0 auto;
+        min-height: 8vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-list a{
+        color: #111;
+        text-decoration: none;
+        display: block;
+    }
+
+    .nav-list li {
+        opacity: 1;
+    }
+
+    /* Landing Page - Desktop */
+    .landing-page {
+        display: flex;
+        background-size: cover;
+
+    }
+    .landing-index {
+        min-height: 90vh;
+    }
+
+    .landing-left {
+        height: 90vh;
+        width: 50%;
+        margin-left: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .landing-left h2 {
+        font-size: 3.5rem;
+        margin-top: 0vh;
+    }
+
+    .landing-left p {
+        font-size: 1.6rem;
+    }
+
+    .landing-right {
+        height: 90vh;
+        width: 30%;
+        margin-right: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .landing-right img {
+        height: 84vh;
+    }
+
+    .button-primary {
+        width: 15vw;
+        font-size: 1.25rem;      
+    }
+
+    .button-right {
+        display: none;
+    }
+
+    .button-left {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    /* Deck Section Index - Desktop */
+    .shopping-option {
+        width: 22%;
+    }
+    
+}

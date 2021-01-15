@@ -1,7 +1,8 @@
 const menuBtn = document.querySelector('.menu-btn');
 const navList = document.querySelector('.nav-list');
 const navListLinks = document.querySelectorAll('.nav-list li');
-header = document.querySelector('header');
+const logo = document.querySelector('.logo');
+const checkout = document.querySelector('.checkout')
 
 navigation();
 
@@ -17,6 +18,14 @@ function navigation() {
                 link.style.animation = `navSlide 0.5s ease forwards ${index /5  + 0.5}s`;
              }
         })
+    })
+
+    logo.addEventListener('click', () => {
+        location.href = "index.html";
+    })
+
+    checkout.addEventListener('click', () => {
+        location.href = "checkout.html";
     })
 
 }

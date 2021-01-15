@@ -17,7 +17,7 @@
     <meta property="og:image" content="#"/>
     
     <!--Website description -->
-    <meta name="description" content="Skateboarder owned. Skateboarder ran. Krispy Kleene deck out now!"/>
+    <meta name="description" content="Skateboarder owned. Skateboarder ran. Krispy Kleen deck out now!"/>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -51,62 +51,94 @@
             </div>
         </div>
     </header>
-
+    
     <!-- Landing Page -->
-    <section class="landing-page landing-index">
+    <section class="section index-landing-page">
         <div class="landing-left">
-            <h2>It's time to make the doughnuts.</h2>
+            <h2>It's time to make <span class="block">the donuts.</span></h2>
             <p>Krispy Kleen - the newest deck design from Solace Skate Co.</p>
-            <form>
-                <button class="button-primary button-left">
-                    Order Now
+            <img src="img/down-arrow.png" alt="down arrow">
+            <form action="shop/krispy-kleen-deck.html">
+                <button class="btn-primary">
+                    Buy Now
                 </button>
             </form>
+
         </div>
-        <div class="landing-right">
-            <img src="img/products/krispy-kleen.png" alt="Krispy Kleen deck">
-            <form>
-                <button class="button-primary button-right">
-                    Order Now
+
+        <div class="landing-right flex-column-around-center">
+            <img src="img/products/krispy-kleen.png" alt="Krispy Kleen Deck">
+            <form action="shop/krispy-kleen-deck.html">
+                <button class="btn-primary">
+                    Buy Now
                 </button>
             </form>
         </div>
     </section>
 
-    <section class="section section-decks">
+    <section class="section deck-section flex-column-around">
         <h2>Decks</h2>
-        <div class="section-container">
-            <div class="shopping-option deck">
-                <img src="img/products/basic-white-deck.jpg" alt="White Solace Skate Co. Deck">
+        <div class="container deck-container">
+            <div class="product deck"><a href="shop/logo-deck-white.html">
+                <img src="img/products/basic-white-deck.jpg" alt="Solace Skate Co logo deck - white">
                 <p>Logo Deck - Silver on White</p>
                 <p>$50</p>
-            </div>
+            </a></div>
 
-            <div class="shopping-option deck">
-                <img src="img/products/basic-black-deck.jpg" alt="Black Solace Skate Co. Deck">
+            <div class="product deck"><a href="shop/logo-deck-black.html">
+                <img src="img/products/basic-black-deck.jpg" alt="Solace Skate Co logo deck - black">
                 <p>Logo Deck - Silver on Black</p>
                 <p>$50</p>
-            </div>
+            </a></div>
 
-            <div class="shopping-option deck">
-                <img src="img/products/good-enough-deck.jpg" alt="Good Enough Solace Skate Co. Deck">
+            <div class="product deck"><a href="shop/good-enough-deck.html">
+                <img src="img/products/good-enough-deck.jpg" alt="Solace Skate Co Good Enough deck">
                 <p>Good Enough Deck</p>
                 <p>$60</p>
-            </div>
+            </a></div>
 
-            <div class="shopping-option deck"><a href="contact.html">
-                <img src="img/products/krispy-kleen-deck.jpg" alt="Blue Solace Skate Co. Deck">
+            <div class="product deck"><a href="shop/logo-deck-white.html">
+                <img src="img/products/krispy-kleen-deck.jpg" alt="Krispy Kleen Deck">
                 <p>Krispy Kleen Deck</p>
                 <p>$60</p>
             </a></div>
         </div>
 
+        <h4><a href="shop.html">Shop More ></a></h4>
+    </section>
+    <section class="section flex-row-around  squad-section">
+        <div class="section-banner squad-banner flex-column-around">
+            <h2>Squad</h2>
+        </div>
+        <div class="squad chance">
+            <h3>Chance Morse</h3>
+        </div>
+        <div class="squad jake">
+            <h3>Jake Keith</h3>
+        </div>
+        <div class="squad cole">
+            <h3>Cole Scheck</h3>
+        </div>
+        <div class="squad noah">
+            <h3>Noah Benson</h3>
+        </div>
     </section>
 
-    <section class="section">
+    <footer class = "flex-column-around">
+        <h4><a href="return-policy.html">Return Policy</a></h4>
+
+        <div class="socials flex-row-around">
+            <a href="https://www.facebook.com/solaceskateco" target="_blank"><img src="img/social-media/facebook.png" alt="Facebook icon"></a>
+            <a href="https://www.instagram.com/solaceskateco/" target="_blank"><img src="img/social-media/instagram.png" alt="Instagram icon"></a>
+            <a href="https://twitter.com/SolaceSkateCo" target="_blank"><img src="img/social-media/twitter.png" alt="Twitter icon"></a>
+            <a href="https://www.youtube.com/channel/UCarcrlThawq5eqvOTH_KvwA" target="_blank"><img src="img/social-media/youtube.png" alt="Youtube icon"></a>
+        </div>
+
+        <p>&#169; 2021 Solace Skate Co.</p>
 
 
-    </section>
+    </footer>
+
     
     <script src="/js/menu.js"></script>
 </body>

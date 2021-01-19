@@ -31,19 +31,7 @@
     .section h2 {
         font-size: 3.5rem;
     }
-
-    .flex-column-around {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .flex-row-around {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
+    
     .section a {
         text-decoration: none;
         color: #111;
@@ -266,83 +254,91 @@
     }
 
     /* Shopping Section - Index - Mobile */
-    .deck-section {
-        padding-top: 0;
-        padding: 2rem 0;
-    }
-    
-    .deck-container {
-        width: 90%;
-    }
 
-    .deck {
-        text-align: center;
+    .product-section {
         padding: 2rem 0;
     }
 
-    .deck-container img {
+    .product-container {
         width: 100%;
-        object-position: center;
-        object-fit: contain;
+        text-align: center;
     }
 
-    .deck p {
+    .product {
+        width: 90%;
+        margin: 2rem auto;
+    }
+
+    .product p {
+        font-size: 1.5rem;
         padding: .25rem 0;
     }
 
-    .deck-section h4 {
+    .product img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+    }
+
+    .product-section h4 {
         font-size: 2rem;
         width: 90%;
+        margin: 0 auto;
         text-align: right;
-        margin: 2rem auto 0 auto;
     }
 
-    .deck-section h4 a:hover {
+    .product-section a:hover{
         text-decoration: underline;
     }
+   
+
 
     /* Squad Section - Mobile */
+    .squad-index {
+        padding-top: 0;
+    }
+
     .squad-section {
+        display: flex;
         flex-wrap: wrap;
-        min-height: 20vh;
     }
 
     .section-banner {
-        min-height: 30vh;
         width: 100%;
+        min-height: 40vh;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .section-banner h2 {
         color: #ffffff;
-        text-shadow: 2px 2px 10px #111;
+        font-size: 3.5rem;
     }
-
 
     .squad-banner {
         background-image: url(/img/team/mobile-banner.jpg);
     }
 
-    .squad{
-        min-height: 100vw;
+    .squad {
         width: 100vw;
+        height: 100vw;
         background-position: center;
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
     }
 
     .squad h3 {
-        color: #ffffff;
         font-size: 2.5rem;
-        text-shadow: 2px 2px 10px #111;
+        color: #ffffff;
     }
+    
 
     .chance {
         background-image: url(/img/team/chance-morse.jpg);
@@ -365,6 +361,9 @@
         padding: 2rem 0 1rem 0;
         text-align: center;
         min-height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     footer h4 {
@@ -383,6 +382,9 @@
     .socials {
         width: 70%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .socials a {
@@ -395,6 +397,11 @@
         object-fit: cover;
         object-position: center;
         width: 50%;
+        transition: all 0.5s ease;
+    }
+
+    .socials img:hover {
+        transform: scale(1.1);
     }
 
     footer p {
@@ -428,30 +435,56 @@
     }  
     
     /* Shopping Section - Index - Tablet */
-    .deck-container {
+
+    .product-container {
         width: 100%;
+        text-align: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
     }
 
     .product {
         width: 45%;
+        margin: 2rem auto;
+    }
+
+    .product p {
+        font-size: 1.5rem;
+        padding: .25rem 0;
+    }
+
+    .product img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+    }
+
+    .product-section h4 {
+        font-size: 2rem;
+        width: 90%;
+        margin: 0 auto;
+        text-align: right;
     }
 
     /* Squad Section - Tablet */
-    .squad-banner {
-        background-image: url(/img/team/squad-desktop.jpg);
-        min-height: 20vh;
-        background-position: top;
+    .squad-section {
+        flex-direction: row;
     }
 
-    .squad{
-        min-height: 50vw;
-        width: 50%;
+    .section-banner {
+        min-height: 25vh;
     }
+
+    .squad-banner {
+        background-image: url(/img/team/squad-desktop.jpg);
+    }
+
+    .squad {
+        width: 50%;
+        height: 50vw;
+    }
+    
 
     /* Footer Section - Tablet */
     .socials {
@@ -583,27 +616,26 @@
 
     /* Shopping Section - Index - Desktop */
     .product {
-        width: 20%;
+        width: 22.5%;
     }
 
-    .deck-section h4 {
+    .product p {
+        font-size: 1.25rem;
+    }
+
+    .product-section h4 {
+        width: 97%;
         font-size: 1.5rem;
     }
 
     /* Squad Section - Desktop */
-    .squad-banner {
-        background-image: url(/img/team/squad-desktop.jpg);
+    .section-banner {
         min-height: 40vh;
-        background-position: top;
     }
 
-    .squad-banner {
-        min-height: 20vw;
-    }
-
-    .squad{
-        min-height: 25vw;
+    .squad {
         width: 25%;
+        height: 25vw;
     }
 
     .squad h3 {

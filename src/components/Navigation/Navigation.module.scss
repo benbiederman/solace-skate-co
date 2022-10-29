@@ -1,0 +1,269 @@
+@import "../../styling/mixins";
+@import "../../styling/variables";
+
+header {
+  width: 100%;
+  box-shadow: 0px 5px 10px #303030;
+  background-color: $black;
+  height: 8vh;
+  @include flex(row, space-between, center);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  a {
+    @include flex(row, center, center);
+    margin-left: 5vw;
+  }
+  img {
+    max-height: 7vh;
+    padding: 1vh 0;
+    object-position: center;
+    object-fit: contain;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    position: absolute;
+    min-height: 7vh;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .skipBtn {
+    background-color: $black;
+    color: $white;
+    height: 8vh;
+    width: auto;
+    border: 2px solid $white;
+    padding: 0.5vh 2.5vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-125%);
+    transition: transform 0.25s ease;
+    @include defaultFont;
+    font-size: 1rem;
+    &:focus {
+      transform: translateY(0%);
+      text-decoration: underline;
+      color: $lightBlue;
+    }
+  }
+  .cart {
+    right: 22.5vw;
+    img {
+      margin: 2px auto 0;
+      width: 50%;
+    }
+  }
+  .headerMenuToggle {
+    right: 5vw;
+    .hamburger {
+      width: 25px;
+      height: 2px;
+      background-color: $white;
+      content: "";
+      border-radius: 2px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &::before,
+      &::after {
+        transition: transform 0.25s ease;
+        width: inherit;
+        height: inherit;
+        background-color: $white;
+        content: "";
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+      }
+      &::before {
+        margin-top: -6px;
+      }
+      &::after {
+        margin-top: 6px;
+      }
+    }
+  }
+  nav {
+    position: absolute;
+    top: 8vh;
+    width: 100%;
+    background-color: $black;
+    @include flex(column, center, center);
+    padding: 1vh 0;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    a {
+      text-decoration: none;
+      padding: 0.5vh 2.5vw;
+      @include header;
+      color: $white;
+      font-size: 1.25rem;
+      margin: 2vh auto;
+      &:focus,
+      &:hover {
+        color: $lightBlue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.headerActive {
+  nav {
+    transform: translateX(0%);
+  }
+  .headerMenuToggle {
+    .hamburger {
+      background-color: transparent;
+      &::before,
+      &::after {
+        width: inherit;
+        height: inherit;
+        background-color: $white;
+        content: "";
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+      }
+      &::before {
+        transform: rotate(45deg);
+        background-color: red;
+        margin: 0;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        background-color: red;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) {
+  header {
+    .cart {
+      right: 17.5vw;
+      img {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    .cart {
+      right: 17.5vw;
+    }
+    .skipBtn {
+      padding: 0.5vh 2.5vw;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    button {
+      width: 75px;
+      position: absolute;
+      min-height: 7vh;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .cart {
+      right: 15vw;
+      img {
+        width: 45%;
+      }
+    }
+    .headerMenuToggle {
+      .hamburger {
+        width: 35px;
+        &::before {
+          margin-top: -10px;
+        }
+        &::after {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    a {
+      margin-left: 5vw;
+    }
+    button {
+      width: 50px;
+    }
+    .skipBtn {
+      height: 5vh;
+      left: 5vw;
+      transform: translateY(-125%);
+    }
+    .cart {
+      right: 5vw;
+    }
+    .headerMenuToggle {
+      display: none;
+    }
+    nav {
+      position: static;
+      min-width: 20%;
+      max-width: 30%;
+      margin-right: 10vw;
+      height: 8vh;
+      @include flex(row, flex-end, center);
+      padding: 0;
+      transform: translateX(0);
+      a {
+        padding: 0vh 1.5vw;
+        margin: 0;
+        &:focus,
+        &:hover {
+          color: $lightBlue;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .headerActive {
+      nav {
+        transform: translateX(0%);
+      }
+      .headerMenuToggle {
+        .hamburger {
+          background-color: transparent;
+          &::before,
+          &::after {
+            width: inherit;
+            height: inherit;
+            background-color: $white;
+            content: "";
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+          }
+          &::before {
+            transform: rotate(45deg);
+            background-color: red;
+            margin: 0;
+          }
+          &::after {
+            transform: rotate(-45deg);
+            background-color: red;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

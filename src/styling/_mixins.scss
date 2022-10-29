@@ -1,0 +1,15 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin header() {
+  font-family: "Staatliches", sans-serif;
+}
+
+@mixin defaultFont() {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}

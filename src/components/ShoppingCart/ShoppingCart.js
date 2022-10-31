@@ -9,18 +9,18 @@ const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
           : `${styles.shoppingCart}`
       }
     >
-      <div className={styles.cartList}>
-        {cartList.length > 0 ? (
-          cartList.map((item) => {
+      {cartList.length > 0 ? (
+        <div className={styles.cartList}>
+          {cartList.map((item) => {
             return <p>Need item component</p>;
-          })
-        ) : (
-          <div className={styles.emptyCart}>
-            <p>Your cart is empty.</p>
-            <button onClick={shopBtn}>Continue Shopping</button>
-          </div>
-        )}
-      </div>
+          })}
+        </div>
+      ) : (
+        <div className={styles.emptyCart}>
+          <p>Your cart is empty.</p>
+          <button onClick={shopBtn}>Continue Shopping</button>
+        </div>
+      )}
     </div>
   );
 };

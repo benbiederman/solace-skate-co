@@ -47,11 +47,22 @@ header {
     &:focus {
       transform: translateY(0%);
       text-decoration: underline;
-      color: $lightBlue;
+      color: $blue;
     }
   }
   .cart {
     right: 22.5vw;
+    span {
+      background-color: $blue;
+      position: absolute;
+      right: 0;
+      top: 0.25vh;
+      border-radius: 5px;
+      padding: 0.25vh 1vw;
+      font-size: 0.75rem;
+      @include defaultFont;
+      color: $white;
+    }
     img {
       margin: 2px auto 0;
       width: 50%;
@@ -92,6 +103,7 @@ header {
   nav {
     position: absolute;
     top: 8vh;
+    min-height: 40vh;
     width: 100%;
     background-color: $black;
     @include flex(column, center, center);
@@ -107,7 +119,7 @@ header {
       margin: 2vh auto;
       &:focus,
       &:hover {
-        color: $lightBlue;
+        color: $blue;
         text-decoration: underline;
       }
     }
@@ -153,6 +165,11 @@ header {
         width: 60%;
       }
     }
+    nav {
+      a {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 
@@ -175,6 +192,11 @@ header {
       min-height: 7vh;
       top: 50%;
       transform: translateY(-50%);
+    }
+    nav {
+      a {
+        font-size: 1.5rem;
+      }
     }
     .cart {
       right: 15vw;
@@ -220,7 +242,8 @@ header {
       min-width: 20%;
       max-width: 30%;
       margin-right: 10vw;
-      height: 8vh;
+      min-height: 8vh;
+      max-height: 8vh;
       @include flex(row, flex-end, center);
       padding: 0;
       transform: translateX(0);
@@ -229,7 +252,6 @@ header {
         margin: 0;
         &:focus,
         &:hover {
-          color: $lightBlue;
           text-decoration: underline;
         }
       }

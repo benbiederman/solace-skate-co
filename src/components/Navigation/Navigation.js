@@ -4,17 +4,27 @@ import shoppingCart from "../../images/icons/shopping-cart.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
-const Navigation = () => {
+const Navigation = ({ cartList }) => {
   const [headerActive, setHeaderActive] = useState(false);
   const [shopActive, setShopActive] = useState(false);
 
   const activateHeader = () => {
+    setShopActive(false);
     setHeaderActive(!headerActive);
+  };
+
+  const activateCart = () => {
+    if (window.innerWidth < 1024) {
+      setHeaderActive(false);
+    }
+    setShopActive(!shopActive);
   };
 
   const linkClick = () => {
     setHeaderActive(false);
+    setShopActive(false);
   };
 
   useEffect(() => {
@@ -23,10 +33,15 @@ const Navigation = () => {
     }
   }, []);
 
+  const shopBtn = () => {
+    window.location = "/shop";
+    setShopActive(false);
+  };
+
   return (
     <header className={headerActive ? styles.headerActive : null}>
       <button className={styles.skipBtn}>Skip to content</button>
-      <Link to="/">
+      <Link to="/" onClick={linkClick}>
         <img src={logo} alt="Solace Skate Co. logo" />
       </Link>
 
@@ -66,9 +81,16 @@ const Navigation = () => {
         aria-label="Shopping Cart"
         aria-expanded={false}
         aria-controls="header-shopping cart"
+        onClick={activateCart}
       >
+        {cartList.length > 0 && <span>{cartList.length}</span>}
         <img src={shoppingCart} alt="Shopping Cart icon" />
       </button>
+      <ShoppingCart
+        shopActive={shopActive}
+        cartList={cartList}
+        shopBtn={shopBtn}
+      />
     </header>
   );
 };

@@ -1,4 +1,4 @@
-import ShoppingCartList from "../../ShoppingCartList/ShoppingCartList";
+import ShoppingCartList from "../ShoppingCartList/ShoppingCartList";
 import styles from "./ShoppingCart.module.scss";
 
 const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {

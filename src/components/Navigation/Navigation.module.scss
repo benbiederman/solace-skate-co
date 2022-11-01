@@ -47,7 +47,7 @@ header {
     &:focus {
       transform: translateY(0%);
       text-decoration: underline;
-      color: $blue;
+      color: $white;
     }
   }
   .cart {
@@ -203,6 +203,11 @@ header {
       img {
         width: 45%;
       }
+      span {
+        right: 0.5vw;
+        top: 1vh;
+        padding: 0.25vh 1vw;
+      }
     }
     .headerMenuToggle {
       .hamburger {
@@ -233,7 +238,13 @@ header {
     }
     .cart {
       right: 5vw;
+      span {
+        right: 0.25vw;
+        top: 1vh;
+        padding: 0.25vh 0.25vw;
+      }
     }
+
     .headerMenuToggle {
       display: none;
     }

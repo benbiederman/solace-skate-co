@@ -1,3 +1,4 @@
+import ShoppingCartList from "../../ShoppingCartList/ShoppingCartList";
 import styles from "./ShoppingCart.module.scss";
 
 const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
@@ -10,11 +11,7 @@ const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
       }
     >
       {cartList.length > 0 ? (
-        <div className={styles.cartList}>
-          {cartList.map((item) => {
-            return <p>Need item component</p>;
-          })}
-        </div>
+        <ShoppingCartList cartList={cartList} />
       ) : (
         <div className={styles.emptyCart}>
           <p>Your cart is empty.</p>

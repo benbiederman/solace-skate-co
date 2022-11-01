@@ -23,7 +23,9 @@ const Navigation = ({ cartList }) => {
   };
 
   const linkClick = () => {
-    setHeaderActive(false);
+    if (window.innerWidth < 1024) {
+      setHeaderActive(false);
+    }
     setShopActive(false);
   };
 

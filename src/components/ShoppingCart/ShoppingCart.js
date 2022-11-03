@@ -15,7 +15,9 @@ const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
       ) : (
         <div className={styles.emptyCart}>
           <p>Your cart is empty.</p>
-          <button onClick={shopBtn}>Continue Shopping</button>
+          <button onClick={shopBtn} tabIndex={shopActive ? 0 : -1}>
+            Continue Shopping
+          </button>
         </div>
       )}
     </div>

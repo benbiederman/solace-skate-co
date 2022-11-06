@@ -3,7 +3,6 @@
 
 header {
   width: 100%;
-  box-shadow: 0px 5px 10px #303030;
   background-color: $black;
   height: 8vh;
   @include flex(row, space-between, center);

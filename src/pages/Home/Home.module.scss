@@ -42,3 +42,16 @@
     text-decoration: line-through;
   }
 }
+
+@media screen and (min-width: 300px) {
+  .hero {
+    min-height: 62vh;
+    img {
+      width: 90%;
+    }
+    div {
+      width: 75%;
+      margin: 0vh auto 2.5vh;
+    }
+  }
+}

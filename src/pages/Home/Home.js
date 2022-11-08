@@ -6,7 +6,10 @@ const Home = () => {
   return (
     <main>
       <section className={styles.hero}>
-        <img src={heroImg} />
+        <img
+          src={heroImg}
+          alt="Chance noseblunting a skateboarding box, next to the new Solace Skate Co. skateboard graphic."
+        />
         <div>
           <h2>
             It's time to <span>make</span> skate the donuts.

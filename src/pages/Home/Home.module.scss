@@ -62,17 +62,35 @@
     @include flex(row, center, center);
     img {
       width: 45%;
-      margin-left: 5vh;
+      margin-left: 10vw;
     }
     div {
       width: 45%;
-      margin: 0 5vh 0 0;
+      margin: 0 10vw 0 0;
       h2 {
         font-size: 2.5rem;
         line-height: 3rem;
       }
       button {
         font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    min-height: 92vh;
+    div {
+      h2 {
+        width: 50%;
+        margin: 0 auto;
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+      button {
+        font-size: 1.5rem;
+        margin-top: 5vh;
       }
     }
   }

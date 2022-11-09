@@ -1,22 +1,22 @@
 import styles from "./Home.module.scss";
 import heroImg from "../../images/hero-img.png";
-import deck from "../../images/product/krispy-kleen-deck.png";
+import HomepageHero from "../../components/HomepageHero/HomepageHero";
 
 const Home = () => {
   return (
     <main>
-      <section className={styles.hero}>
-        <img
-          src={heroImg}
-          alt="Chance noseblunting a skateboarding box, next to the new Solace Skate Co. skateboard graphic."
-        />
-        <div>
-          <h2>
+      <HomepageHero
+        img={heroImg}
+        alt={
+          "Chance noseblunting a skateboarding box, next to the new Solace Skate Co. skateboard graphic."
+        }
+        heading={
+          <>
             It's time to <span>make</span> skate the donuts.
-          </h2>
-          <button>Shop now</button>
-        </div>
-      </section>
+          </>
+        }
+        cta={"Shop now"}
+      />
     </main>
   );
 };

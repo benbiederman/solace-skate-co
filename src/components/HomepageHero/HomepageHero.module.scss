@@ -1,0 +1,99 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.hero {
+  min-height: 72vh;
+  width: 100%;
+  background-image: url("../../images/hero-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include flex(column, flex-start, center);
+  img {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  div {
+    width: 75%;
+    margin: 2.5vh auto 0;
+    text-align: center;
+    h2 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    button {
+      background-color: $black;
+      color: $white;
+      border: none;
+      padding: 1vh 5vw;
+      margin-top: 2.5vh;
+      border-radius: 5px;
+      transition: background 0.25s ease;
+      @include defaultFont;
+      font-size: 1rem;
+      &:hover,
+      &:focus {
+        background-color: $blue;
+      }
+    }
+  }
+  span {
+    text-decoration: line-through;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .hero {
+    min-height: 62vh;
+    img {
+      width: 90%;
+    }
+    div {
+      width: 75%;
+      margin: 0vh auto 2.5vh;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    min-height: 32vh;
+    @include flex(row, center, center);
+    img {
+      width: 45%;
+      margin-left: 10vw;
+    }
+    div {
+      width: 45%;
+      margin: 0 10vw 0 0;
+      h2 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+      button {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    min-height: 42vh;
+    div {
+      h2 {
+        width: 50%;
+        margin: 0 auto;
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+      button {
+        font-size: 1.5rem;
+        margin-top: 5vh;
+      }
+    }
+  }
+}

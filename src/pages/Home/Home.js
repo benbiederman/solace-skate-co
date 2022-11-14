@@ -1,6 +1,7 @@
 import styles from "./Home.module.scss";
 import heroImg from "../../images/hero-img.png";
 import HomepageHero from "../../components/HomepageHero/HomepageHero";
+import ShoppingSection from "../../components/ShoppingSection/ShoppingSection";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         }
         cta={"Shop now"}
       />
+      <ShoppingSection header="Apparel" category="apparel" />
     </main>
   );
 };

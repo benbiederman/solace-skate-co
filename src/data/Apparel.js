@@ -33,6 +33,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackBasicTee,
+        alt: "Black t-shirt with a basic Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 5, medium: 7, large: 14, xl: 11, xxl: 2 }],
         price: 24.95,
@@ -42,6 +43,7 @@ const Apparel = [
       {
         color: "Blue",
         img: blueBasicTee,
+        alt: "Blue t-shirt with a basic Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 7, medium: 4, large: 18, xl: 5, xxl: 1 }],
         price: 24.95,
@@ -51,6 +53,7 @@ const Apparel = [
       {
         color: "Dark Green",
         img: greenBasicTee,
+        alt: "Green t-shirt with a basic Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 7, medium: 4, large: 18, xl: 5, xxl: 0 }],
         price: 24.95,
@@ -60,6 +63,7 @@ const Apparel = [
       {
         color: "White",
         img: whiteBasicTee,
+        alt: "White t-shirt with a basic Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 2, medium: 3, large: 7, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -74,6 +78,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackCamoTee,
+        alt: "Black t-shirt with a traditional camouflage Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 3, medium: 4, large: 6, xl: 4, xxl: 1 }],
         price: 24.95,
@@ -83,6 +88,7 @@ const Apparel = [
       {
         color: "Green",
         img: greenCamoTee,
+        alt: "Green t-shirt with a traditional camouflage Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 2, medium: 2, large: 5, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -92,6 +98,7 @@ const Apparel = [
       {
         color: "Tan",
         img: tanCamoTee,
+        alt: "Tan t-shirt with a traditional camouflage Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 0, medium: 2, large: 4, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -101,6 +108,7 @@ const Apparel = [
       {
         color: "White",
         img: whiteCamoTee,
+        alt: "White t-shirt with a traditional camouflage Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 1, medium: 2, large: 2, xl: 1, xxl: 0 }],
         price: 24.95,
@@ -115,6 +123,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackFloralTee,
+        alt: "Black t-shirt with a floral Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 5, medium: 7, large: 8, xl: 6, xxl: 2 }],
         price: 24.95,
@@ -124,6 +133,7 @@ const Apparel = [
       {
         color: "Green",
         img: greenFloralTee,
+        alt: "Green t-shirt with a floral Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 2, medium: 2, large: 5, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -133,6 +143,7 @@ const Apparel = [
       {
         color: "Pink",
         img: pinkFloralTee,
+        alt: "Pink t-shirt with a floral Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 6, medium: 6, large: 10, xl: 5, xxl: 0 }],
         price: 24.95,
@@ -142,6 +153,7 @@ const Apparel = [
       {
         color: "White",
         img: whiteFloralTee,
+        alt: "White t-shirt with a floral Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 7, medium: 8, large: 11, xl: 6, xxl: 0 }],
         price: 24.95,
@@ -156,6 +168,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackGalaxyTee,
+        alt: "Black t-shirt with a galaxy Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 7, medium: 11, large: 14, xl: 6, xxl: 2 }],
         price: 24.95,
@@ -165,6 +178,7 @@ const Apparel = [
       {
         color: "White",
         img: whiteGalaxyTee,
+        alt: "White t-shirt with a galaxy Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 8, medium: 12, large: 13, xl: 4, xxl: 0 }],
         price: 24.95,
@@ -179,6 +193,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackPatternTee,
+        alt: "Black t-shirt with a patterned Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 5, medium: 7, large: 11, xl: 3, xxl: 0 }],
         price: 24.95,
@@ -188,6 +203,7 @@ const Apparel = [
       {
         color: "Gray",
         img: grayPatternTee,
+        alt: "Gray t-shirt with a patterned Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 3, medium: 6, large: 9, xl: 3, xxl: 0 }],
         price: 24.95,
@@ -197,6 +213,7 @@ const Apparel = [
       {
         color: "White",
         img: whitePatternTee,
+        alt: "White t-shirt with a patterned Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 4, medium: 5, large: 8, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -211,6 +228,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackShreddedTee,
+        alt: "Black t-shirt with a shredded Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 5, medium: 7, large: 11, xl: 3, xxl: 0 }],
         price: 24.95,
@@ -220,6 +238,7 @@ const Apparel = [
       {
         color: "Gray",
         img: grayShreddedTee,
+        alt: "Gray t-shirt with a shredded Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 3, medium: 6, large: 9, xl: 3, xxl: 0 }],
         price: 24.95,
@@ -229,6 +248,7 @@ const Apparel = [
       {
         color: "Red",
         img: redShreddedTee,
+        alt: "Red t-shirt with a shredded Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 4, medium: 5, large: 8, xl: 2, xxl: 0 }],
         price: 24.95,
@@ -243,6 +263,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackBasicHoodie,
+        alt: "Black hoody with a basic Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 3, medium: 4, large: 6, xl: 2, xxl: 0 }],
         price: 49.95,
@@ -257,6 +278,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackCamoHoodie,
+        alt: "Black hoody with a camo Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 1, medium: 2, large: 3, xl: 1, xxl: 0 }],
         price: 49.95,
@@ -271,6 +293,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackFloralHoodie,
+        alt: "Black hoody with a floral Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 5, medium: 8, large: 8, xl: 3, xxl: 1 }],
         price: 49.95,
@@ -285,6 +308,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackGalaxyHoodie,
+        alt: "Black hoody with a galaxy Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 12, medium: 12, large: 18, xl: 5, xxl: 3 }],
         price: 49.95,
@@ -299,6 +323,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackPatternHoodie,
+        alt: "Black hoody with a patterned Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 6, medium: 5, large: 9, xl: 2, xxl: 0 }],
         price: 49.95,
@@ -313,6 +338,7 @@ const Apparel = [
       {
         color: "Black",
         img: blackShreddedHoodie,
+        alt: "Black hoody with a shredded Solace Skate Co. logo on the front",
         id: uuidv4(),
         inventory: [{ small: 11, medium: 16, large: 25, xl: 18, xxl: 7 }],
         price: 49.95,

@@ -1,0 +1,42 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.shopSection {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.5vh 0;
+  text-align: center;
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5vh;
+  }
+  div {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .shopSection {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shopSection {
+    padding: 5vh 0;
+    h3 {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .shopSection {
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+}

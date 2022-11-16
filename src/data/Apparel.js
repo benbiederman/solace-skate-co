@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import blackBasicHoodie from "../images/product/basic-hoodie-black.png";
 import blackBasicTee from "../images/product/basic-logo-black.png";
-import blueBasicTee from "../images/product/basic-logo-black.png";
-import greenBasicTee from "../images/product/basic-logo-black.png";
+import blueBasicTee from "../images/product/basic-logo-blue.png";
+import greenBasicTee from "../images/product/basic-logo-green.png";
 import whiteBasicTee from "../images/product/basic-logo-white.png";
 import blackCamoHoodie from "../images/product/camo-hoodie-black.png";
 import blackCamoTee from "../images/product/camo-logo-black.png";
@@ -27,20 +27,6 @@ import grayShreddedTee from "../images/product/shredded-logo-gray.png";
 import redShreddedTee from "../images/product/shredded-logo-red.png";
 
 const Apparel = [
-  {
-    name: "Basic Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackBasicHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 3, medium: 4, large: 6, xl: 2, xxl: 0 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
   {
     name: "Basic Logo Tee",
     variation: [
@@ -79,20 +65,6 @@ const Apparel = [
         price: 24.95,
         sale: false,
         salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Camo Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackCamoHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 1, medium: 2, large: 3, xl: 1, xxl: 0 }],
-        price: 49.95,
-        sale: true,
-        salePrice: 39.95,
       },
     ],
   },
@@ -138,20 +110,6 @@ const Apparel = [
     ],
   },
   {
-    name: "Floral Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackFloralHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 5, medium: 8, large: 8, xl: 3, xxl: 1 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
     name: "Floral Logo Tee",
     variation: [
       {
@@ -193,20 +151,6 @@ const Apparel = [
     ],
   },
   {
-    name: "Galaxy Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackGalaxyHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 12, medium: 12, large: 18, xl: 5, xxl: 3 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
     name: "Galaxy Logo Tee",
     variation: [
       {
@@ -224,20 +168,6 @@ const Apparel = [
         id: uuidv4(),
         inventory: [{ small: 8, medium: 12, large: 13, xl: 4, xxl: 0 }],
         price: 24.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Pattern Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackPatternHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 6, medium: 5, large: 9, xl: 2, xxl: 0 }],
-        price: 49.95,
         sale: false,
         salePrice: null,
       },
@@ -276,20 +206,6 @@ const Apparel = [
     ],
   },
   {
-    name: "Shredded Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackShreddedHoodie,
-        id: uuidv4(),
-        inventory: [{ small: 11, medium: 16, large: 25, xl: 18, xxl: 7 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
     name: "Shredded Logo Tee",
     variation: [
       {
@@ -316,6 +232,90 @@ const Apparel = [
         id: uuidv4(),
         inventory: [{ small: 4, medium: 5, large: 8, xl: 2, xxl: 0 }],
         price: 24.95,
+        sale: false,
+        salePrice: null,
+      },
+    ],
+  },
+  {
+    name: "Basic Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackBasicHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 3, medium: 4, large: 6, xl: 2, xxl: 0 }],
+        price: 49.95,
+        sale: false,
+        salePrice: null,
+      },
+    ],
+  },
+  {
+    name: "Camo Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackCamoHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 1, medium: 2, large: 3, xl: 1, xxl: 0 }],
+        price: 49.95,
+        sale: true,
+        salePrice: 39.95,
+      },
+    ],
+  },
+  {
+    name: "Floral Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackFloralHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 5, medium: 8, large: 8, xl: 3, xxl: 1 }],
+        price: 49.95,
+        sale: false,
+        salePrice: null,
+      },
+    ],
+  },
+  {
+    name: "Galaxy Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackGalaxyHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 12, medium: 12, large: 18, xl: 5, xxl: 3 }],
+        price: 49.95,
+        sale: false,
+        salePrice: null,
+      },
+    ],
+  },
+  {
+    name: "Pattern Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackPatternHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 6, medium: 5, large: 9, xl: 2, xxl: 0 }],
+        price: 49.95,
+        sale: false,
+        salePrice: null,
+      },
+    ],
+  },
+  {
+    name: "Shredded Logo Hoodie",
+    variation: [
+      {
+        color: "Black",
+        img: blackShreddedHoodie,
+        id: uuidv4(),
+        inventory: [{ small: 11, medium: 16, large: 25, xl: 18, xxl: 7 }],
+        price: 49.95,
         sale: false,
         salePrice: null,
       },

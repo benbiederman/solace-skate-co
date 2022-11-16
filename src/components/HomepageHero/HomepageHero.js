@@ -6,7 +6,7 @@ const HomepageHero = (props) => {
       <img src={props.img} alt={props.altText} />
       <div>
         <h2>{props.heading}</h2>
-        <button>{props.cta}</button>
+        <button className="primaryBtn">{props.cta}</button>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ const Home = () => {
         }
         cta={"Shop now"}
       />
-      <ShoppingSection header="Apparel" category="apparel" />
+      <ShoppingSection header="Apparel" category="apparel" allItems={false} />
     </main>
   );
 };

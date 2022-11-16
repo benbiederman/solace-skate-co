@@ -28,11 +28,6 @@
   span {
     text-decoration: line-through;
   }
-
-  button {
-    font-size: 1rem;
-    padding: 1vh 5vw;
-  }
 }
 
 @media screen and (min-width: 300px) {
@@ -64,9 +59,6 @@
         line-height: 3rem;
       }
     }
-    button {
-      font-size: 1.25rem;
-    }
   }
 }
 
@@ -80,10 +72,6 @@
         font-size: 3rem;
         line-height: 4rem;
       }
-    }
-    button {
-      font-size: 1.5rem;
-      margin-top: 5vh;
     }
   }
 }

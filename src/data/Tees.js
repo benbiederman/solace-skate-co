@@ -1,27 +1,21 @@
 import { v4 as uuidv4 } from "uuid";
-import blackBasicHoodie from "../images/product/basic-hoodie-black.png";
 import blackBasicTee from "../images/product/basic-logo-black.png";
 import blueBasicTee from "../images/product/basic-logo-blue.png";
 import greenBasicTee from "../images/product/basic-logo-green.png";
 import whiteBasicTee from "../images/product/basic-logo-white.png";
-import blackCamoHoodie from "../images/product/camo-hoodie-black.png";
 import blackCamoTee from "../images/product/camo-logo-black.png";
 import greenCamoTee from "../images/product/camo-logo-green.png";
 import tanCamoTee from "../images/product/camo-logo-tan.png";
 import whiteCamoTee from "../images/product/camo-logo-white.png";
-import blackFloralHoodie from "../images/product/floral-hoodie-black.png";
 import blackFloralTee from "../images/product/floral-logo-black.png";
 import greenFloralTee from "../images/product/floral-logo-green.png";
 import pinkFloralTee from "../images/product/floral-logo-pink.png";
 import whiteFloralTee from "../images/product/floral-logo-white.png";
-import blackGalaxyHoodie from "../images/product/galaxy-hoodie-black.png";
 import blackGalaxyTee from "../images/product/galaxy-logo-black.png";
 import whiteGalaxyTee from "../images/product/galaxy-logo-white.png";
-import blackPatternHoodie from "../images/product/pattern-hoodie-black.png";
 import blackPatternTee from "../images/product/pattern-logo-black.png";
 import grayPatternTee from "../images/product/pattern-logo-gray.png";
 import whitePatternTee from "../images/product/pattern-logo-white.png";
-import blackShreddedHoodie from "../images/product/shredded-hoodie-black.png";
 import blackShreddedTee from "../images/product/shredded-logo-black.png";
 import grayShreddedTee from "../images/product/shredded-logo-gray.png";
 import redShreddedTee from "../images/product/shredded-logo-red.png";
@@ -252,96 +246,6 @@ const Apparel = [
         id: uuidv4(),
         inventory: [{ small: 4, medium: 5, large: 8, xl: 2, xxl: 0 }],
         price: 24.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Basic Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackBasicHoodie,
-        alt: "Black hoody with a basic Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 3, medium: 4, large: 6, xl: 2, xxl: 0 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Camo Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackCamoHoodie,
-        alt: "Black hoody with a camo Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 1, medium: 2, large: 3, xl: 1, xxl: 0 }],
-        price: 49.95,
-        sale: true,
-        salePrice: 39.95,
-      },
-    ],
-  },
-  {
-    name: "Floral Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackFloralHoodie,
-        alt: "Black hoody with a floral Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 5, medium: 8, large: 8, xl: 3, xxl: 1 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Galaxy Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackGalaxyHoodie,
-        alt: "Black hoody with a galaxy Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 12, medium: 12, large: 18, xl: 5, xxl: 3 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Pattern Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackPatternHoodie,
-        alt: "Black hoody with a patterned Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 6, medium: 5, large: 9, xl: 2, xxl: 0 }],
-        price: 49.95,
-        sale: false,
-        salePrice: null,
-      },
-    ],
-  },
-  {
-    name: "Shredded Logo Hoodie",
-    variation: [
-      {
-        color: "Black",
-        img: blackShreddedHoodie,
-        alt: "Black hoody with a shredded Solace Skate Co. logo on the front",
-        id: uuidv4(),
-        inventory: [{ small: 11, medium: 16, large: 25, xl: 18, xxl: 7 }],
-        price: 49.95,
         sale: false,
         salePrice: null,
       },

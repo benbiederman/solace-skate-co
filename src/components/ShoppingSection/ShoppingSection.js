@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import styles from "./ShoppingSection.module.scss";
-import Apparel from "../../data/Apparel";
+import Tees from "../../data/Tees";
 import Decks from "../../data/Decks";
 import ShoppingSectionItem from "../ShoppingSectionItem/ShoppingSectionItem";
 
@@ -10,7 +10,7 @@ const ShoppingSection = (props) => {
   useEffect(() => {
     switch (props.category.toLowerCase()) {
       case "apparel":
-        setShopOptions(Apparel);
+        setShopOptions(Tees);
         break;
       case "decks":
         setShopOptions(Decks);

@@ -6,20 +6,7 @@ import Decks from "../../data/Decks";
 import ShoppingSectionItem from "../ShoppingSectionItem/ShoppingSectionItem";
 
 const ShoppingSection = (props) => {
-  const [shopOptions, setShopOptions] = useState();
-  useEffect(() => {
-    switch (props.category.toLowerCase()) {
-      case "apparel":
-        setShopOptions(Tees);
-        break;
-      case "decks":
-        setShopOptions(Decks);
-        break;
-      default:
-        setShopOptions(null);
-        break;
-    }
-  }, []);
+  const shopOptions = props.data;
 
   return (
     <section className={styles.shopSection}>

@@ -1,9 +1,7 @@
 import styles from "./ShoppingSectionItem.module.scss";
 
-const ShoppingSectionItem = ({ item, data, allItems }) => {
+const ShoppingSectionItem = ({ item, data }) => {
   const name = item.name;
-
-  console.log(item);
 
   return (
     <article className={styles.shoppingSectionItem} tabIndex={0}>

@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
 import styles from "./ShoppingSection.module.scss";
-import Tees from "../../data/Tees";
-import Decks from "../../data/Decks";
 import ShoppingSectionItem from "../ShoppingSectionItem/ShoppingSectionItem";
 import { Link } from "react-router-dom";
 
@@ -50,7 +46,6 @@ const ShoppingSection = ({
         <Link
           to="/shop"
           state={allData}
-          role="Button"
           className="primaryBtn"
           aria-label={`Shop all ${header} button`}
         >

@@ -1,4 +1,5 @@
 import styles from "./HomepageHero.module.scss";
+import { Link } from "react-router-dom";
 
 const HomepageHero = (props) => {
   return (
@@ -6,7 +7,9 @@ const HomepageHero = (props) => {
       <img src={props.img} alt={props.altText} />
       <div>
         <h2>{props.heading}</h2>
-        <button className="primaryBtn">{props.cta}</button>
+        <Link to="/shop" className="primaryBtn" aria-label={`Shop now button`}>
+          Shop now
+        </Link>
       </div>
     </section>
   );

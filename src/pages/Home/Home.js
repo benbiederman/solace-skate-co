@@ -45,7 +45,13 @@ const Home = () => {
         }
         cta={"Shop now"}
       />
-      <ShoppingSection header="Apparel" data={tees} allItems={false} />
+      <ShoppingSection
+        header="Tees"
+        allData={Tees}
+        filteredData={tees}
+        showAllData={false}
+        cta={true}
+      />
     </main>
   );
 };

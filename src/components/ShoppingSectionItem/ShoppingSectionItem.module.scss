@@ -7,6 +7,7 @@
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  color: $black;
   &:hover h4,
   &:focus h4 {
     color: $blue;
@@ -29,13 +30,6 @@
     font-size: 0.8rem;
     &:last-of-type {
       margin-top: 1.25vh;
-    }
-    .sale {
-      color: $red;
-      text-decoration: line-through;
-    }
-    .salePrice {
-      color: $green;
     }
   }
   .saleTag {

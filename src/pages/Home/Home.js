@@ -32,7 +32,7 @@ const Home = () => {
   }
 
   return (
-    <main>
+    <main id="main">
       <HomepageHero
         img={heroImg}
         alt={

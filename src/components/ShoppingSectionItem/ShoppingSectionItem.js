@@ -1,24 +1,32 @@
+import { Link } from "react-router-dom";
 import styles from "./ShoppingSectionItem.module.scss";
 
 const ShoppingSectionItem = ({ item, data }) => {
-  const name = item.name;
+  const name = data.name;
+  const url = data.name.replaceAll(" ", "-").toLowerCase();
+  const variation = data.variation;
 
   return (
-    <article className={styles.shoppingSectionItem} tabIndex={0}>
-      {data.sale && <p className={styles.saleTag}>Sale</p>}
+    <Link
+      to={`/shop/${url}`}
+      state={{ allData: data, item: item, variations: variation }}
+      className={styles.shoppingSectionItem}
+      tabIndex={0}
+    >
+      {item.sale && <p className={styles.saleTag}>Sale</p>}
       <figure>
-        <img src={data.img} alt={data.alt} />
+        <img src={item.img} alt={item.alt} />
       </figure>
       <h4>{name}</h4>
-      {data.sale ? (
+      {item.sale ? (
         <p>
-          <span className={styles.sale}>${data.price}</span>{" "}
-          <span className={styles.salePrice}>${data.salePrice}</span>
+          <span className="sale">${item.price}</span>{" "}
+          <span className="salePrice">${item.salePrice}</span>
         </p>
       ) : (
-        <p>${data.price}</p>
+        <p>${item.price}</p>
       )}
-    </article>
+    </Link>
   );
 };
 

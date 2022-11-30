@@ -21,8 +21,8 @@ const ShoppingSection = ({
             return item.variation.map((i) => {
               return (
                 <ShoppingSectionItem
-                  item={item}
-                  data={i}
+                  data={item}
+                  item={i}
                   showAllData={true}
                   key={i.id}
                 />
@@ -34,8 +34,8 @@ const ShoppingSection = ({
           shopOptions.map((item) => {
             return (
               <ShoppingSectionItem
-                item={item}
-                data={item.variation[0]}
+                data={item}
+                item={item.variation[0]}
                 showAllData={false}
                 key={item.variation[0].id}
               />

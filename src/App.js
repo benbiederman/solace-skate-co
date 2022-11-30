@@ -5,6 +5,7 @@ import Team from "./pages/Team/Team";
 import Shop from "./pages/Shop/Shop";
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
+import ItemPage from "./components/ItemPage/ItemPage";
 
 function App() {
   const [cartList, setCartList] = useState([]);
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/team" element={<Team />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:url" element={<ItemPage />} />
           </Routes>
         </div>
         <Footer />

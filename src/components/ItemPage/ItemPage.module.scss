@@ -1,0 +1,37 @@
+@import "../../styling/_mixins.scss";
+@import "../../styling/_variables.scss";
+
+.itemPage {
+  @include flex(column-reverse, flex-end, center);
+  padding: 2.5vh 0;
+  .itemImg {
+    figure {
+      width: 90%;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .itemInfo {
+    margin-top: 2.5vh;
+    text-align: center;
+    p {
+      margin: 0.75vh 0;
+    }
+  }
+  .itemOptions {
+    width: 90%;
+    margin: 2.5vh auto;
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    img {
+      box-shadow: 0px 0px 8px $lightGray;
+      padding: 1.25vh 1.25vw;
+      margin: 1.25vh 1vw;
+      width: 22.5%;
+    }
+  }
+}

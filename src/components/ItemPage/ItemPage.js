@@ -6,10 +6,12 @@ import styles from "./ItemPage.module.scss";
 const ItemPage = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
-  const [inventory, setInventory] = useState(activeItem.inventory[0]);
+  const [inventory, setInventory] = useState(activeItem.inventory);
 
   const itemData = location.state.allData;
   const variations = location.state.variations;
+
+  console.log(inventory);
 
   useEffect(() => {
     window.scrollTo(0, 0);

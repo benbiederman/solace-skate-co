@@ -11,11 +11,11 @@ const ItemPage = () => {
   const itemData = location.state.allData;
   const variations = location.state.variations;
 
-  console.log(inventory);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  console.log(inventory);
 
   return (
     <main className={styles.itemPage}>

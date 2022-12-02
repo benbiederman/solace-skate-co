@@ -7,7 +7,7 @@ const ItemPage = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
-  const [activeSize, setActiveSize] = useState();
+  const [activeSize, setActiveSize] = useState(7);
 
   const itemData = location.state.allData;
   const variations = location.state.variations;
@@ -48,7 +48,7 @@ const ItemPage = () => {
               })}
           </div>
           {/* Sizing Options */}
-          <div className={styles.sizing}>
+          <div className={styles.itemSizing}>
             {inventory.map((option) => {
               return (
                 <div

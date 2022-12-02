@@ -18,6 +18,9 @@
   .itemInfo {
     margin-top: 2.5vh;
     text-align: center;
+    h2 {
+      font-size: 1.25rem;
+    }
     p {
       margin: 0.75vh auto;
     }
@@ -32,10 +35,11 @@
       padding: 1.25vh 1.25vw;
       margin: 1.25vh 1vw;
       width: 22.5%;
+      cursor: pointer;
     }
   }
 
-  .sizing {
+  .itemSizing {
     width: 90%;
     margin: 2.5vh auto;
     @include flex(row, flex-start, center);
@@ -44,6 +48,7 @@
       width: 22.5%;
       padding: 1.5vh 1.25vw;
       margin: 1vw 1vw;
+      cursor: pointer;
       p {
         text-transform: uppercase;
         font-size: 0.75rem;
@@ -70,5 +75,70 @@
   .cartBtn {
     width: 90%;
     padding: 1.25vh 0;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .itemPage {
+    .itemOptions {
+      width: 90%;
+    }
+    .item {
+      div {
+        p {
+          text-transform: uppercase;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .itemPage {
+    @include flex(row-reverse, center, flex-start);
+    .itemImg {
+      min-height: 50vh;
+      width: 50%;
+      margin-top: 5vh;
+    }
+    .itemInfo {
+      width: 35%;
+      margin-top: 2.5vh;
+      h2 {
+        font-size: 1.75rem;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+    .itemOptions {
+      margin: 1.25vh auto;
+      img {
+        box-shadow: 0px 0px 8px $lightGray;
+        padding: 1.25vh 1.25vw;
+        margin: 0.75vh 0.35vw;
+      }
+    }
+
+    .itemSizing {
+      margin: 1.25vh auto;
+      div {
+        padding: 0.75vh 1.25vw;
+        margin: 0.5vw 0.35vw;
+        p {
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    .fomo {
+      width: 100%;
+    }
+
+    .cartBtn {
+      width: 100%;
+    }
   }
 }

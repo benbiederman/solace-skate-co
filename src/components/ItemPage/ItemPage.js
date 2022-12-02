@@ -55,8 +55,8 @@ const ItemPage = () => {
                   tabIndex={option.quantity > 0 ? 0 : -1}
                   className={
                     option.quantity > 0
-                      ? styles.sizeAvailable
-                      : styles.sizeUnavailable
+                      ? `${styles.sizeAvailable} ${styles.size}`
+                      : `${styles.sizeUnavailable} ${styles.size}`
                   }
                 >
                   <p>{option.size}</p>

@@ -103,12 +103,15 @@
       margin-top: 5vh;
     }
     .itemInfo {
+      text-align: left;
       width: 35%;
       margin-top: 2.5vh;
       h2 {
+        margin-left: 5%;
         font-size: 1.75rem;
       }
       p {
+        margin-left: 5%;
         font-size: 1.25rem;
       }
     }
@@ -124,7 +127,8 @@
     .itemSizing {
       margin: 1.25vh auto;
       div {
-        padding: 0.75vh 1.25vw;
+        text-align: center;
+        padding: 0.75vh 0vw;
         margin: 0.5vw 0.35vw;
         p {
           text-transform: uppercase;
@@ -134,11 +138,95 @@
     }
 
     .fomo {
-      width: 100%;
+      width: 90%;
+      margin-left: 5%;
     }
 
     .cartBtn {
-      width: 100%;
+      margin-left: 5%;
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .itemPage {
+    @include flex(row-reverse, center, center);
+    .itemImg {
+      width: 45%;
+      figure {
+        width: 70%;
+        margin: 0 auto;
+        img {
+          margin-top: 2.5vh;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    .itemInfo {
+      width: 25%;
+      margin-top: 2.5vh;
+      h2 {
+        font-size: 2.5rem;
+      }
+      p {
+        margin: 0;
+        margin-left: 5%;
+        margin-bottom: 2.5vh;
+      }
+    }
+    .itemOptions {
+      margin: 2.5vh 0;
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      img {
+        box-shadow: 0px 0px 4px $lightGray;
+        padding: 0.75vh 0.75vw;
+        margin: 2.5vh 0.25vw 1.25vh;
+        width: 22.5%;
+        cursor: pointer;
+      }
+    }
+
+    .itemSizing {
+      width: 90%;
+      margin: 2.5vh 0;
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      .size {
+        padding: 0.75vh 0vw;
+        margin: 0.75vh 0.25vw 0.75vh;
+        width: 22.5%;
+        cursor: pointer;
+        p {
+          margin: 0;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
+      }
+      .sizeAvailable {
+        background-color: $white;
+        border: 2px solid $lightGray;
+        color: $black;
+      }
+      .sizeUnavailable {
+        border: 2px solid $lightGray;
+        color: $gray;
+        background-color: $lightGray;
+      }
+    }
+
+    .fomo {
+      width: 90%;
+      padding: 1.25vh 0;
+      background-color: $yellow;
+    }
+
+    .cartBtn {
+      width: 90%;
+      padding: 1.25vh 0;
     }
   }
 }

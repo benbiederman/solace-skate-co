@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./ShoppingSectionItem.module.scss";
 
-const ShoppingSectionItem = ({ item, data }) => {
+const ShoppingSectionItem = ({ item, data, category }) => {
   const name = data.name;
   const url = data.name.replaceAll(" ", "-").toLowerCase();
   const variation = data.variation;
@@ -9,7 +9,12 @@ const ShoppingSectionItem = ({ item, data }) => {
   return (
     <Link
       to={`/shop/${url}`}
-      state={{ allData: data, item: item, variations: variation }}
+      state={{
+        allData: data,
+        item: item,
+        variations: variation,
+        category: category,
+      }}
       className={styles.shoppingSectionItem}
       tabIndex={0}
     >

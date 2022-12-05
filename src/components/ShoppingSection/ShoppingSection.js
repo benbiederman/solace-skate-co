@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShoppingSection = ({
   header,
+  category,
   allData,
   filteredData,
   showAllData,
@@ -21,6 +22,7 @@ const ShoppingSection = ({
             return item.variation.map((i) => {
               return (
                 <ShoppingSectionItem
+                  category={category}
                   data={item}
                   item={i}
                   showAllData={true}
@@ -35,6 +37,7 @@ const ShoppingSection = ({
             return (
               <ShoppingSectionItem
                 data={item}
+                category={category}
                 item={item.variation[0]}
                 showAllData={false}
                 key={item.variation[0].id}
@@ -45,7 +48,7 @@ const ShoppingSection = ({
       {cta && (
         <Link
           to="/shop"
-          state={allData}
+          state={category}
           className="primaryBtn"
           aria-label={`Shop all ${header} button`}
         >

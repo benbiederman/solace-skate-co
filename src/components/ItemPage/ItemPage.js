@@ -11,15 +11,21 @@ const ItemPage = () => {
 
   const itemData = location.state.allData;
   const variations = location.state.variations;
+  const category = location.state.category;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(inventory);
-
   return (
     <main>
+      <Link
+        to="/shop"
+        state={category}
+        className={`secondaryBtn ${styles.backBtn}`}
+      >
+        <p>Back to {category}</p>
+      </Link>
       <section className={styles.itemPage}>
         {/* Main Product Info */}
         <div className={styles.itemInfo}>

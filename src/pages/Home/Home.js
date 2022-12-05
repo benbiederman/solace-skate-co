@@ -47,6 +47,7 @@ const Home = () => {
       />
       <ShoppingSection
         header="Tees"
+        category="Tees"
         allData={Tees}
         filteredData={tees}
         showAllData={false}

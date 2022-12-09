@@ -50,7 +50,6 @@ const Home = () => {
         category="Tees"
         allData={Tees}
         filteredData={tees}
-        showAllData={false}
         cta={true}
       />
     </main>

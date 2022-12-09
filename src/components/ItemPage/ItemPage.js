@@ -1,30 +1,61 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ShoppingSection from "../ShoppingSection/ShoppingSection";
 import styles from "./ItemPage.module.scss";
+import allProducts from "../../data/AllProducts";
+
+import { v4 as uuidv4 } from "uuid";
 
 const ItemPage = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
   const [activeSize, setActiveSize] = useState(7);
-
-  const itemData = location.state.allData;
-  const variations = location.state.variations;
-  const category = location.state.category;
+  const [itemData, setItemData] = useState(location.state.allData);
+  const [variations, setVariations] = useState(location.state.variations);
+  const [category, setCategory] = useState(location.state.category);
+  const [productSuggestion, setProductSuggestion] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    setItemData(location.state.allData);
+    setCategory(location.state.category);
+    setVariations(location.state.variations);
+    setCategory(location.state.category);
+    setInventory(activeItem.inventory);
+    setActiveItem(location.state.item);
+    setProductSuggestion([]);
+    setSuggestions(allProducts);
+  }, [location]);
+
+  useEffect(() => {
+    setProductSuggestion([]);
+    setSuggestions(allProducts);
+  }, [itemData]);
+
+  const setSuggestions = (productArr) => {
+    let products = [...productArr];
+    let filteredAmount = window.innerWidth < 1024 ? 4 : 5;
+
+    for (let i = 0; i < filteredAmount; i++) {
+      const randomNumber = Math.floor(Math.random() * products.length);
+      let randomProduct = products.splice(randomNumber, 1)[0];
+
+      if (randomProduct.name !== itemData.name) {
+        setProductSuggestion((prevState) => [...prevState, randomProduct]);
+      }
+    }
+  };
 
   return (
     <main>
       <Link
         to="/shop"
-        state={category}
+        state={itemData.category}
         className={`secondaryBtn ${styles.backBtn}`}
       >
-        <p>Back to {category}</p>
+        <p>Back to {itemData.category}</p>
       </Link>
       <section className={styles.itemPage}>
         {/* Main Product Info */}
@@ -58,6 +89,7 @@ const ItemPage = () => {
             {inventory.map((option) => {
               return (
                 <div
+                  key={uuidv4()}
                   tabIndex={option.quantity > 0 ? 0 : -1}
                   className={
                     option.quantity > 0
@@ -85,6 +117,13 @@ const ItemPage = () => {
           </figure>
         </div>
       </section>
+      <hr></hr>
+      {/* Item Suggestions */}
+      <ShoppingSection
+        header={"You may also like"}
+        category={category}
+        filteredData={productSuggestion}
+      />
     </main>
   );
 };

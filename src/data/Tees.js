@@ -23,6 +23,7 @@ import redShreddedTee from "../images/product/shredded-logo-red.png";
 const Apparel = [
   {
     name: "Basic Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",
@@ -92,6 +93,7 @@ const Apparel = [
   },
   {
     name: "Camo Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",
@@ -161,6 +163,7 @@ const Apparel = [
   },
   {
     name: "Floral Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",
@@ -230,6 +233,7 @@ const Apparel = [
   },
   {
     name: "Galaxy Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",
@@ -267,6 +271,7 @@ const Apparel = [
   },
   {
     name: "Pattern Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",
@@ -320,6 +325,7 @@ const Apparel = [
   },
   {
     name: "Shredded Logo Tee",
+    category: "Tees",
     variation: [
       {
         color: "Black",

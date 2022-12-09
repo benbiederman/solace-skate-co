@@ -7,7 +7,7 @@ const ShoppingSection = ({
   category,
   allData,
   filteredData,
-  showAllData,
+  showAllData = false,
   cta = false,
 }) => {
   const shopOptions = filteredData;

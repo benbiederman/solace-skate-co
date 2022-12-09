@@ -22,6 +22,7 @@ import whiteOnWhiteTextDeck from "../images/product/solace-text-wow.png";
 const Decks = [
   {
     name: "Graffiti Deck",
+    category: "Decks",
     variation: [
       {
         color: "Black",
@@ -117,6 +118,7 @@ const Decks = [
   },
   {
     name: "Krispy Kleen Deck",
+    category: "Decks",
     variation: [
       {
         color: null,
@@ -137,6 +139,7 @@ const Decks = [
   },
   {
     name: "Logos Deck",
+    category: "Decks",
     variation: [
       {
         color: "Black",
@@ -202,6 +205,7 @@ const Decks = [
   },
   {
     name: "Shapes Deck",
+    category: "Decks",
     variation: [
       {
         color: "Gray",
@@ -267,6 +271,7 @@ const Decks = [
   },
   {
     name: "Text Deck",
+    category: "Decks",
     variation: [
       {
         color: "Black",

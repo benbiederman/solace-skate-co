@@ -9,6 +9,7 @@ import blackShreddedHoodie from "../images/product/shredded-hoodie-black.png";
 const Hoodies = [
   {
     name: "Basic Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",
@@ -30,6 +31,7 @@ const Hoodies = [
   },
   {
     name: "Camo Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",
@@ -51,6 +53,7 @@ const Hoodies = [
   },
   {
     name: "Floral Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",
@@ -72,6 +75,7 @@ const Hoodies = [
   },
   {
     name: "Galaxy Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",
@@ -93,6 +97,7 @@ const Hoodies = [
   },
   {
     name: "Pattern Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",
@@ -114,6 +119,7 @@ const Hoodies = [
   },
   {
     name: "Shredded Logo Hoodie",
+    category: "Hoodies",
     variation: [
       {
         color: "Black",

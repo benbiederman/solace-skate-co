@@ -25,8 +25,6 @@ const ItemPage = () => {
     setCategory(location.state.category);
     setInventory(activeItem.inventory);
     setActiveItem(location.state.item);
-    setProductSuggestion([]);
-    setSuggestions(allProducts);
   }, [location]);
 
   useEffect(() => {
@@ -37,13 +35,15 @@ const ItemPage = () => {
   const setSuggestions = (productArr) => {
     let products = [...productArr];
     let filteredAmount = window.innerWidth < 1024 ? 4 : 5;
+    let i = 0;
 
-    for (let i = 0; i < filteredAmount; i++) {
+    while (i < filteredAmount) {
       const randomNumber = Math.floor(Math.random() * products.length);
       let randomProduct = products.splice(randomNumber, 1)[0];
 
       if (randomProduct.name !== itemData.name) {
         setProductSuggestion((prevState) => [...prevState, randomProduct]);
+        i++;
       }
     }
   };

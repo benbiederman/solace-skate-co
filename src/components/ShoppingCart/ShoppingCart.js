@@ -1,5 +1,6 @@
 import ShoppingCartList from "../ShoppingCartList/ShoppingCartList";
 import styles from "./ShoppingCart.module.scss";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
   return (
@@ -15,9 +16,13 @@ const ShoppingCart = ({ shopActive, cartList, shopBtn }) => {
       ) : (
         <div className={styles.emptyCart}>
           <p>Your cart is empty.</p>
-          <button onClick={shopBtn} tabIndex={shopActive ? 0 : -1}>
+          <Link
+            className={styles.shopBtn}
+            onClick={shopBtn}
+            tabIndex={shopActive ? 0 : -1}
+          >
             Continue Shopping
-          </button>
+          </Link>
         </div>
       )}
     </div>

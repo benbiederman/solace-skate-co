@@ -1,0 +1,53 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.shoppingSectionHeader {
+  background-image: url("../../images/textured-background.png");
+  min-height: 10vh;
+  @include flex(row, center, center);
+  box-shadow: 0 0 8px $gray;
+  ul {
+    width: 90%;
+    margin: 0 auto;
+    @include flex(row, space-evenly, center);
+    li {
+      color: $white;
+      font-size: 1.25rem;
+      padding: 1.25vh 2.5vw;
+      @include header;
+      text-decoration: none;
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      &:hover,
+      &:focus {
+        color: $blue;
+        text-decoration: underline;
+      }
+    }
+    .activeItem {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .shoppingSectionHeader {
+    ul {
+      li {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shoppingSectionHeader {
+    min-height: 7.5vh;
+    ul {
+      li {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

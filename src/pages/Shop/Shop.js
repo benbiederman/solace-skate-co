@@ -4,6 +4,7 @@ import ShoppingSection from "../../components/ShoppingSection/ShoppingSection";
 import Decks from "../../data/Decks";
 import Tees from "../../data/Tees";
 import Hoodies from "../../data/Hoodies";
+import ShoppingSectionHeader from "../../components/ShoppingSectionHeader/ShoppingSectionheader";
 
 const Shop = () => {
   const { state } = useLocation();
@@ -12,7 +13,15 @@ const Shop = () => {
   const [category, setCategory] = useState(state ? state : "Decks");
 
   useEffect(() => {
-    switch (state) {
+    updateCategory(state);
+  }, []);
+
+  useEffect(() => {
+    updateCategory(category);
+  }, [category]);
+
+  function updateCategory(exp) {
+    switch (exp) {
       case "Tees":
         setItems(Tees);
         break;
@@ -26,7 +35,13 @@ const Shop = () => {
         setItems(Decks);
         break;
     }
-  }, []);
+  }
+
+  const changeCategory = (e) => {
+    if (e.key === "Enter" || e.type === "click") {
+      setCategory(e.target.innerText);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,6 +49,10 @@ const Shop = () => {
 
   return (
     <main>
+      <ShoppingSectionHeader
+        changeCategory={changeCategory}
+        category={category}
+      />
       <ShoppingSection
         filteredData={items}
         showAllData={true}

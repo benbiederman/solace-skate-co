@@ -11,7 +11,7 @@ const ItemPage = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
-  const [activeSize, setActiveSize] = useState(7);
+  const [activeSize, setActiveSize] = useState(3);
   const [itemData, setItemData] = useState(location.state.allData);
   const [variations, setVariations] = useState(location.state.variations);
   const [category, setCategory] = useState(location.state.category);

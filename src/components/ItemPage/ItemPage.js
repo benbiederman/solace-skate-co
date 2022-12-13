@@ -36,6 +36,10 @@ const ItemPage = () => {
     setInventory(activeItem.inventory);
   }, [itemData]);
 
+  useEffect(() => {
+    setInventory(activeItem.inventory);
+  }, [activeItem]);
+
   const setSuggestions = (productArr) => {
     let products = [...productArr];
     let filteredAmount = window.innerWidth < 1024 ? 4 : 5;
@@ -101,6 +105,12 @@ const ItemPage = () => {
                     alt={option.alt}
                     tabIndex={0}
                     key={option.id}
+                    onClick={() => setActiveItem(option)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        setActiveItem(option);
+                      }
+                    }}
                   />
                 );
               })}

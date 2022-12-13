@@ -38,6 +38,7 @@ const ItemPage = () => {
 
   useEffect(() => {
     setInventory(activeItem.inventory);
+    setActiveSize();
   }, [activeItem]);
 
   const setSuggestions = (productArr) => {

@@ -7,10 +7,6 @@
   border: 2px solid $lightGray;
 }
 
-.sizeActive {
-  color: red;
-}
-
 .itemPage {
   @include flex(column-reverse, flex-end, center);
   padding: 5vh 0 2.5vh;
@@ -22,6 +18,7 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
+        user-select: none;
       }
     }
   }
@@ -71,7 +68,13 @@
         text-transform: uppercase;
         font-size: 0.75rem;
         pointer-events: none;
+        user-select: none;
       }
+    }
+
+    .activeSize {
+      background-color: $blue !important;
+      color: $white !important;
     }
 
     .sizeUnavailable {

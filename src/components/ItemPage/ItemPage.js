@@ -27,11 +27,13 @@ const ItemPage = () => {
     setInventory(activeItem.inventory);
     setActiveItem(location.state.item);
     setSizeWarning(false);
+    setActiveSize();
   }, [location]);
 
   useEffect(() => {
     setProductSuggestion([]);
     setSuggestions(allProducts);
+    setInventory(activeItem.inventory);
   }, [itemData]);
 
   const setSuggestions = (productArr) => {
@@ -49,6 +51,13 @@ const ItemPage = () => {
       }
     }
   };
+
+  function selectSize(e) {
+    if (e.key === "Enter" || e.type === "click") {
+      e.preventDefault();
+      setActiveSize(e.target.innerText.toLowerCase());
+    }
+  }
 
   function addToCart(e) {
     if (e.key === "Enter" || e.type === "click") {
@@ -111,10 +120,15 @@ const ItemPage = () => {
                   key={uuidv4()}
                   tabIndex={option.quantity > 0 ? 0 : -1}
                   className={
-                    option.quantity > 0
-                      ? `${styles.sizeAvailable} ${styles.size}`
-                      : `${styles.sizeUnavailable} ${styles.size}`
+                    `${styles.size} ` +
+                    (option.quantity > 0
+                      ? `${styles.sizeAvailable}`
+                      : `${styles.sizeUnavailable}`) +
+                    ` ` +
+                    (activeSize == option.size ? `${styles.activeSize}` : "")
                   }
+                  onKeyDown={selectSize}
+                  onClick={selectSize}
                 >
                   <p>{option.size}</p>
                 </div>

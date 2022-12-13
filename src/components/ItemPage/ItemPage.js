@@ -11,7 +11,8 @@ const ItemPage = () => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
-  const [activeSize, setActiveSize] = useState(3);
+  const [activeSize, setActiveSize] = useState();
+  const [sizeWarning, setSizeWarning] = useState(false);
   const [itemData, setItemData] = useState(location.state.allData);
   const [variations, setVariations] = useState(location.state.variations);
   const [category, setCategory] = useState(location.state.category);
@@ -25,6 +26,7 @@ const ItemPage = () => {
     setCategory(location.state.category);
     setInventory(activeItem.inventory);
     setActiveItem(location.state.item);
+    setSizeWarning(false);
   }, [location]);
 
   useEffect(() => {
@@ -47,6 +49,16 @@ const ItemPage = () => {
       }
     }
   };
+
+  function addToCart(e) {
+    if (e.key === "Enter" || e.type === "click") {
+      e.preventDefault();
+      if (!activeSize) {
+        console.log(e);
+        setSizeWarning(true);
+      }
+    }
+  }
 
   return (
     <main>
@@ -85,7 +97,14 @@ const ItemPage = () => {
               })}
           </div>
           {/* Sizing Options */}
-          <div className={styles.itemSizing}>
+          {sizeWarning && (
+            <div className={styles.sizeWarning}>
+              <p>Please select a size</p>
+            </div>
+          )}
+          <div
+            className={!sizeWarning ? styles.itemSizing : styles.itemWarning}
+          >
             {inventory.map((option) => {
               return (
                 <div
@@ -105,7 +124,11 @@ const ItemPage = () => {
           {activeSize && activeSize < 5 && (
             <p className={styles.fomo}>Only X left! Don't miss out!</p>
           )}
-          <button className={`${styles.cartBtn} primaryBtn`}>
+          <button
+            onKeyDown={addToCart}
+            onClick={addToCart}
+            className={`${styles.cartBtn} primaryBtn`}
+          >
             Add to cart
           </button>
           {/* Add to Cart Button */}

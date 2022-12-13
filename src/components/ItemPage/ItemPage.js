@@ -12,6 +12,7 @@ const ItemPage = () => {
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
   const [activeSize, setActiveSize] = useState();
+  const [sizeQuantity, setSizeQuantity] = useState();
   const [sizeWarning, setSizeWarning] = useState(false);
   const [itemData, setItemData] = useState(location.state.allData);
   const [variations, setVariations] = useState(location.state.variations);
@@ -39,6 +40,7 @@ const ItemPage = () => {
   useEffect(() => {
     setInventory(activeItem.inventory);
     setActiveSize();
+    setSizeQuantity();
   }, [activeItem]);
 
   const setSuggestions = (productArr) => {
@@ -56,13 +58,6 @@ const ItemPage = () => {
       }
     }
   };
-
-  function selectSize(e) {
-    if (e.key === "Enter" || e.type === "click") {
-      e.preventDefault();
-      setActiveSize(e.target.innerText.toLowerCase());
-    }
-  }
 
   function addToCart(e) {
     if (e.key === "Enter" || e.type === "click") {
@@ -96,6 +91,7 @@ const ItemPage = () => {
           ) : (
             <p>${activeItem.price}</p>
           )}
+
           {/* Item Options */}
           <div className={styles.itemOptions}>
             {variations &&
@@ -116,6 +112,7 @@ const ItemPage = () => {
                 );
               })}
           </div>
+
           {/* Sizing Options */}
           {sizeWarning && (
             <div className={styles.sizeWarning}>
@@ -138,17 +135,31 @@ const ItemPage = () => {
                     ` ` +
                     (activeSize == option.size ? `${styles.activeSize}` : "")
                   }
-                  onKeyDown={selectSize}
-                  onClick={selectSize}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      setActiveSize(option.size);
+                      setSizeQuantity(option.quantity);
+                    }
+                  }}
+                  onClick={(e) => {
+                    setActiveSize(option.size);
+                    setSizeQuantity(option.quantity);
+                  }}
                 >
                   <p>{option.size}</p>
                 </div>
               );
             })}
           </div>
-          {activeSize && activeSize < 5 && (
-            <p className={styles.fomo}>Only X left! Don't miss out!</p>
+
+          {/* FOMO block */}
+          {sizeQuantity && sizeQuantity <= 3 && (
+            <p className={styles.fomo}>
+              Only {sizeQuantity} left! Don't miss out!
+            </p>
           )}
+
+          {/* Add to cart button */}
           <button
             onKeyDown={addToCart}
             onClick={addToCart}
@@ -156,8 +167,8 @@ const ItemPage = () => {
           >
             Add to cart
           </button>
-          {/* Add to Cart Button */}
         </div>
+
         {/* Main Product Image */}
         <div className={styles.itemImg}>
           <figure>
@@ -166,6 +177,7 @@ const ItemPage = () => {
         </div>
       </section>
       <hr></hr>
+
       {/* Item Suggestions */}
       <ShoppingSection
         header={"You may also like"}

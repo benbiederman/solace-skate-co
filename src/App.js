@@ -6,6 +6,7 @@ import Shop from "./pages/Shop/Shop";
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 import ItemPage from "./components/ItemPage/ItemPage";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   const [cartList, setCartList] = useState([]);
@@ -20,6 +21,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/shop/:url" element={<ItemPage />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
         <Footer />

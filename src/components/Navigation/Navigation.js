@@ -4,7 +4,6 @@ import shoppingCart from "../../images/icons/shopping-cart.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 const Navigation = ({ cartList }) => {
   const [headerActive, setHeaderActive] = useState(false);
@@ -77,22 +76,19 @@ const Navigation = ({ cartList }) => {
           Shop
         </Link>
       </nav>
-      <button
-        type="button"
-        className={styles.cart}
-        aria-label="Shopping Cart"
-        aria-expanded={false}
-        aria-controls="header-shopping cart"
-        onClick={activateCart}
-      >
-        {cartList.length > 0 && <span>{cartList.length}</span>}
-        <img src={shoppingCart} alt="Shopping Cart icon" />
-      </button>
-      <ShoppingCart
-        shopActive={shopActive}
-        cartList={cartList}
-        shopBtn={shopBtn}
-      />
+      <Link to="/cart">
+        <button
+          type="button"
+          className={styles.cart}
+          aria-label="Shopping Cart"
+          aria-expanded={false}
+          aria-controls="header-shopping cart"
+          onClick={activateCart}
+        >
+          {cartList.length > 0 && <span>{cartList.length}</span>}
+          <img src={shoppingCart} alt="Shopping Cart icon" />
+        </button>
+      </Link>
     </header>
   );
 };

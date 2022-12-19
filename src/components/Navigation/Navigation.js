@@ -76,7 +76,7 @@ const Navigation = ({ cartList }) => {
           Shop
         </Link>
       </nav>
-      <Link to="/cart">
+      <Link to="/cart" className={styles.cartBtn}>
         <button
           type="button"
           className={styles.cart}

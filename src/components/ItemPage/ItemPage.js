@@ -7,7 +7,7 @@ import allProducts from "../../data/AllProducts";
 
 import { v4 as uuidv4 } from "uuid";
 
-const ItemPage = () => {
+const ItemPage = ({ addToCart }) => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
@@ -59,13 +59,15 @@ const ItemPage = () => {
     }
   };
 
-  function addToCart(e) {
+  function itemBtnHandler(e) {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
       if (!activeSize) {
         console.log(e);
         setSizeWarning(true);
       }
+
+      addToCart(itemData.name, activeItem, activeSize, sizeQuantity);
     }
   }
 
@@ -161,8 +163,8 @@ const ItemPage = () => {
 
           {/* Add to cart button */}
           <button
-            onKeyDown={addToCart}
-            onClick={addToCart}
+            onKeyDown={itemBtnHandler}
+            onClick={itemBtnHandler}
             className={`${styles.cartBtn} primaryBtn`}
           >
             Add to cart

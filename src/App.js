@@ -11,6 +11,21 @@ import Cart from "./pages/Cart/Cart";
 function App() {
   const [cartList, setCartList] = useState([]);
 
+  function addToCart(productName, productInfo, productSize, totalQuantity) {
+    let item = {
+      name: productName,
+      img: productInfo.img,
+      alt: productInfo.alt,
+      size: productSize,
+      price: productInfo.price,
+      salePrice: productInfo.salePrice,
+      quantity: 1,
+      id: `${productInfo.id}-${productSize}`,
+    };
+
+    setCartList((prevState) => [...prevState, item]);
+  }
+
   return (
     <Router>
       <div>
@@ -20,8 +35,11 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/team" element={<Team />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/shop/:url" element={<ItemPage />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/shop/:url"
+              element={<ItemPage addToCart={addToCart} />}
+            />
+            <Route path="/cart" element={<Cart cartList={cartList} />} />
           </Routes>
         </div>
         <Footer />

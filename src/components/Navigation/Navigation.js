@@ -7,25 +7,15 @@ import { useEffect } from "react";
 
 const Navigation = ({ cartList }) => {
   const [headerActive, setHeaderActive] = useState(false);
-  const [shopActive, setShopActive] = useState(false);
 
   const activateHeader = () => {
-    setShopActive(false);
     setHeaderActive(!headerActive);
-  };
-
-  const activateCart = () => {
-    if (window.innerWidth < 1024) {
-      setHeaderActive(false);
-    }
-    setShopActive(!shopActive);
   };
 
   const linkClick = () => {
     if (window.innerWidth < 1024) {
       setHeaderActive(false);
     }
-    setShopActive(false);
   };
 
   useEffect(() => {
@@ -33,11 +23,6 @@ const Navigation = ({ cartList }) => {
       setHeaderActive(true);
     }
   }, []);
-
-  const shopBtn = () => {
-    window.location = "/shop";
-    setShopActive(false);
-  };
 
   return (
     <header className={headerActive ? styles.headerActive : null}>
@@ -83,7 +68,6 @@ const Navigation = ({ cartList }) => {
           aria-label="Shopping Cart"
           aria-expanded={false}
           aria-controls="header-shopping cart"
-          onClick={activateCart}
         >
           {cartList.length > 0 && <span>{cartList.length}</span>}
           <img src={shoppingCart} alt="Shopping Cart icon" />

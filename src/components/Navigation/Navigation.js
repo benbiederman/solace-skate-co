@@ -18,6 +18,12 @@ const Navigation = ({ cartList }) => {
     }
   };
 
+  const cartBtnClick = () => {
+    if (window.innerWidth < 1024) {
+      setHeaderActive(false);
+    }
+  };
+
   useEffect(() => {
     if (window.innerWidth >= 1024) {
       setHeaderActive(true);
@@ -68,6 +74,7 @@ const Navigation = ({ cartList }) => {
           aria-label="Shopping Cart"
           aria-expanded={false}
           aria-controls="header-shopping cart"
+          onClick={cartBtnClick}
         >
           {cartList.length > 0 && <span>{cartList.length}</span>}
           <img src={shoppingCart} alt="Shopping Cart icon" />

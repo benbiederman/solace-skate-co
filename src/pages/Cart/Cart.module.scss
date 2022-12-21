@@ -1,0 +1,33 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.emptyCart {
+  min-height: 60vh;
+  @include flex(column, center, center);
+  p {
+    font-size: 0.8rem;
+    margin-top: 1.25vh;
+  }
+
+  button {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .emptyCart {
+    p {
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 5vh;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .emptyCart {
+    min-height: 40vh;
+  }
+}

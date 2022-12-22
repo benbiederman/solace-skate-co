@@ -17,6 +17,7 @@ function App() {
       img: productInfo.img,
       alt: productInfo.alt,
       size: productSize,
+      color: productInfo.color,
       price: productInfo.price,
       salePrice: productInfo.salePrice,
       quantity: 1,

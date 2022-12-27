@@ -53,7 +53,9 @@ const Cart = ({ cartList }) => {
               Checkout
             </button>
           </section>
-          <section className={styles.cartList}></section>
+          <section className={styles.cartList}>
+            <h1>Items</h1>
+          </section>
         </div>
       )}
     </main>

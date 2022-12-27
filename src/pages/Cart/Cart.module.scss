@@ -18,7 +18,8 @@
   .cartDetails {
     padding: 1.25vh 0;
     text-align: center;
-    background-color: $lightGray;
+    background-color: $white;
+    box-shadow: 0px 0px 8px $darkGray;
     h2 {
       margin: 1.25vh 0;
     }
@@ -26,6 +27,7 @@
       margin: 0 auto;
       width: 80%;
       @include flex(row, space-between, center);
+      font-size: 0.8rem;
     }
     .total {
       font-weight: 500;
@@ -34,6 +36,9 @@
       width: 80%;
       margin: 5vh auto 2.5vh;
     }
+  }
+  .cartList {
+    width: 100%;
   }
 }
 
@@ -47,10 +52,62 @@
       margin-top: 5vh;
     }
   }
+
+  .cartPage {
+    .cartDetails {
+      P {
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
   .emptyCart {
     min-height: 40vh;
+  }
+
+  .cartPage {
+    .cartDetails {
+      h2 {
+        font-size: 1.75rem;
+      }
+      P {
+        width: 50%;
+      }
+      .checkoutBtn {
+        width: 50%;
+        margin: 2.5vh auto;
+      }
+      hr {
+        margin: 1.25vh auto;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cartPage {
+    @include flex(row-reverse, center, center);
+    .cartDetails {
+      width: 35%;
+      height: 85vh;
+      box-shadow: none;
+      padding-top: 5vh;
+      P {
+        width: 70%;
+      }
+      hr {
+        width: 70%;
+      }
+      .checkoutBtn {
+        width: 70%;
+      }
+    }
+    .cartList {
+      width: 55%;
+      height: 85vh;
+    }
   }
 }

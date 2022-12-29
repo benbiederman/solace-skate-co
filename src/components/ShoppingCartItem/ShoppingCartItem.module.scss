@@ -27,17 +27,23 @@
     @include flex(row, center, center);
     button {
       width: 25%;
-      height: 25px;
+      padding: 0.5vh 0;
       font-size: 0.8rem;
       color: $white;
       background-color: $black;
       border: none;
       @include flex(column, center, center);
-      img {
-        width: 60%;
-      }
+    }
+
+    .itemBtn {
       &:hover {
         background-color: $blue;
+      }
+    }
+
+    .removeBtn {
+      &:hover {
+        background-color: $red;
       }
     }
     input {

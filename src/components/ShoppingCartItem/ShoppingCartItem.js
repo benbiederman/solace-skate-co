@@ -1,5 +1,4 @@
 import styles from "./ShoppingCartItem.module.scss";
-import garbageCan from "../../images/icons/garbage-can.svg";
 
 const ShoppingCartItem = ({ data }) => {
   console.log(data);
@@ -22,15 +21,13 @@ const ShoppingCartItem = ({ data }) => {
         <p>${data.price}</p>
       </div>
       <div className={styles.cartInfo}>
-        <button>
-          {data.quantity === 1 ? (
-            <img src={garbageCan} alt="Garbage can icon" />
-          ) : (
-            "-"
-          )}
-        </button>
+        {data.quantity === 1 ? (
+          <button className={styles.removeBtn}>x</button>
+        ) : (
+          <button className={styles.itemBtn}>-</button>
+        )}
         <input value={data.quantity} readOnly={true} />
-        <button>+</button>
+        <button className={styles.itemBtn}>+</button>
       </div>
     </section>
   );

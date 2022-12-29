@@ -54,7 +54,9 @@ const Cart = ({ cartList }) => {
             </button>
           </section>
           <section className={styles.cartList}>
-            <h1>Items</h1>
+            {cartList.map((item) => {
+              return <ShoppingCartItem data={item} key={item.id} />;
+            })}
           </section>
         </div>
       )}

@@ -1,0 +1,51 @@
+@import "../../styling/variables";
+@import "../../styling/mixins";
+
+.cartItem {
+  @include flex(row, center, center);
+  width: 95%;
+  margin: 2.5vh auto;
+  position: relative;
+  padding: 0.5vh 0;
+  .itemImg {
+    width: 25%;
+    figure {
+      width: 90%;
+      height: 100%;
+      img {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+  .itemInfo {
+    width: 50%;
+  }
+  .cartInfo {
+    width: 25%;
+    @include flex(row, center, center);
+    button {
+      width: 25%;
+      height: 25px;
+      font-size: 0.8rem;
+      color: $white;
+      background-color: $black;
+      border: none;
+      @include flex(column, center, center);
+      img {
+        width: 60%;
+      }
+      &:hover {
+        background-color: $blue;
+      }
+    }
+    input {
+      font-size: 0.8rem;
+      width: 40%;
+      text-align: center;
+      border: none;
+      pointer-events: none;
+    }
+  }
+}

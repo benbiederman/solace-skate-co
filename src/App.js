@@ -14,7 +14,10 @@ function App() {
   function addToCart(productName, productInfo, productSize, totalQuantity) {
     let duplicate = false;
     cartList.map((item) => {
-      if (item.quantity === totalQuantity) {
+      if (
+        item.id === `${productInfo.id}-${productSize}` &&
+        item.quantity === totalQuantity
+      ) {
         duplicate = true;
         return;
       }

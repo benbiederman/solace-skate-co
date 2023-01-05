@@ -12,19 +12,37 @@ function App() {
   const [cartList, setCartList] = useState([]);
 
   function addToCart(productName, productInfo, productSize, totalQuantity) {
-    let item = {
-      name: productName,
-      img: productInfo.img,
-      alt: productInfo.alt,
-      size: productSize,
-      color: productInfo.color,
-      price: productInfo.price,
-      salePrice: productInfo.salePrice,
-      quantity: 1,
-      id: `${productInfo.id}-${productSize}`,
-    };
+    let duplicate = false;
+    cartList.map((item) => {
+      if (item.quantity === totalQuantity) {
+        duplicate = true;
+        return;
+      }
+      if (
+        item.id === `${productInfo.id}-${productSize}` &&
+        item.quantity < totalQuantity
+      ) {
+        item.quantity++;
+        duplicate = true;
+        return;
+      }
+    });
 
-    setCartList((prevState) => [...prevState, item]);
+    if (!duplicate) {
+      let item = {
+        name: productName,
+        img: productInfo.img,
+        alt: productInfo.alt,
+        size: productSize,
+        color: productInfo.color,
+        price: productInfo.price,
+        salePrice: productInfo.salePrice,
+        quantity: 1,
+        id: `${productInfo.id}-${productSize}`,
+      };
+
+      setCartList((prevState) => [...prevState, item]);
+    }
   }
 
   return (

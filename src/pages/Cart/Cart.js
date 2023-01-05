@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ShoppingCartItem from "../../components/ShoppingCartItem/ShoppingCartItem";
 
-const Cart = ({ cartList }) => {
+const Cart = ({ cartList, removeItem }) => {
   const [cartSubtotal, setCartSubtotal] = useState();
   const [cartTax, setCartTax] = useState();
   const [cartTotal, setCartTotal] = useState();
@@ -55,7 +55,13 @@ const Cart = ({ cartList }) => {
           </section>
           <section className={styles.cartList}>
             {cartList.map((item) => {
-              return <ShoppingCartItem data={item} key={item.id} />;
+              return (
+                <ShoppingCartItem
+                  data={item}
+                  key={item.id}
+                  removeItem={removeItem}
+                />
+              );
             })}
           </section>
         </div>

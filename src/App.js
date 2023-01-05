@@ -45,6 +45,17 @@ function App() {
     }
   }
 
+  function removeItem(e, id) {
+    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
+      e.preventDefault();
+      setCartList(
+        cartList.filter((item) => {
+          return item.id !== id;
+        })
+      );
+    }
+  }
+
   return (
     <Router>
       <div>
@@ -58,7 +69,10 @@ function App() {
               path="/shop/:url"
               element={<ItemPage addToCart={addToCart} />}
             />
-            <Route path="/cart" element={<Cart cartList={cartList} />} />
+            <Route
+              path="/cart"
+              element={<Cart cartList={cartList} removeItem={removeItem} />}
+            />
           </Routes>
         </div>
         <Footer />

@@ -1,7 +1,6 @@
 import styles from "./ShoppingCartItem.module.scss";
 
-const ShoppingCartItem = ({ data }) => {
-  console.log(data);
+const ShoppingCartItem = ({ data, removeItem }) => {
   return (
     <section className={styles.cartItem}>
       <div className={styles.itemImg}>
@@ -22,7 +21,13 @@ const ShoppingCartItem = ({ data }) => {
       </div>
       <div className={styles.cartInfo}>
         {data.quantity === 1 ? (
-          <button className={styles.removeBtn}>x</button>
+          <button
+            className={styles.removeBtn}
+            onKeyDown={(e) => removeItem(e, data.id)}
+            onClick={(e) => removeItem(e, data.id)}
+          >
+            x
+          </button>
         ) : (
           <button className={styles.itemBtn}>-</button>
         )}

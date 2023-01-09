@@ -43,6 +43,10 @@ const ItemPage = ({ addToCart }) => {
     setSizeQuantity();
   }, [activeItem]);
 
+  useEffect(() => {
+    setSizeWarning(false);
+  }, [activeSize]);
+
   const setSuggestions = (productArr) => {
     let products = [...productArr];
     let filteredAmount = window.innerWidth < 1024 ? 4 : 5;
@@ -65,9 +69,9 @@ const ItemPage = ({ addToCart }) => {
       if (!activeSize) {
         console.log(e);
         setSizeWarning(true);
+      } else {
+        addToCart(itemData.name, activeItem, activeSize, sizeQuantity);
       }
-
-      addToCart(itemData.name, activeItem, activeSize, sizeQuantity);
     }
   }
 

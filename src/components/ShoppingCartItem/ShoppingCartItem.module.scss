@@ -7,6 +7,7 @@
   margin: 2.5vh auto;
   position: relative;
   padding: 0.5vh 0;
+  flex-wrap: wrap;
   .itemImg {
     width: 25%;
     figure {
@@ -53,6 +54,12 @@
       border: none;
       pointer-events: none;
     }
+  }
+  .disclaimer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: $red;
   }
 }
 

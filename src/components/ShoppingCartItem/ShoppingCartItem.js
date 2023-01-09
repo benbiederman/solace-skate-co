@@ -3,6 +3,23 @@ import { useEffect } from "react";
 import styles from "./ShoppingCartItem.module.scss";
 
 const ShoppingCartItem = ({ data, removeItem, updateQuantity }) => {
+  const [inventoryUnavailable, setInventoryUnavailable] = useState(false);
+
+  function changeQuantity(e, id) {
+    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
+      e.preventDefault();
+      if (data.totalAvailable === data.quantity && e.target.innerText === "+") {
+        setInventoryUnavailable(true);
+        return;
+      }
+      if (data.totalAvailable === data.quantity && e.target.innerText === "-") {
+        setInventoryUnavailable(false);
+      }
+
+      updateQuantity(e, id);
+    }
+  }
+
   return (
     <section className={styles.cartItem}>
       <div className={styles.itemImg}>
@@ -33,8 +50,8 @@ const ShoppingCartItem = ({ data, removeItem, updateQuantity }) => {
         ) : (
           <button
             className={styles.itemBtn}
-            onKeyDown={(e) => updateQuantity(e, data.id)}
-            onClick={(e) => updateQuantity(e, data.id)}
+            onKeyDown={(e) => changeQuantity(e, data.id)}
+            onClick={(e) => changeQuantity(e, data.id)}
           >
             -
           </button>
@@ -42,12 +59,20 @@ const ShoppingCartItem = ({ data, removeItem, updateQuantity }) => {
         <input value={data.quantity} readOnly={true} />
         <button
           className={styles.itemBtn}
-          onKeyDown={(e) => updateQuantity(e, data.id)}
-          onClick={(e) => updateQuantity(e, data.id)}
+          onKeyDown={(e) => changeQuantity(e, data.id)}
+          onClick={(e) => changeQuantity(e, data.id)}
         >
           +
         </button>
       </div>
+      {inventoryUnavailable && (
+        <div className={styles.disclaimer}>
+          <p>
+            Sorry, you cannot add anymore of this size, you have our remaining
+            stock in your cart!
+          </p>
+        </div>
+      )}
     </section>
   );
 };

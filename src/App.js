@@ -41,6 +41,7 @@ function App() {
         price: productInfo.price,
         salePrice: productInfo.salePrice,
         quantity: 1,
+        totalAvailable: totalQuantity,
         id: `${productInfo.id}-${productSize}`,
       };
 
@@ -60,19 +61,16 @@ function App() {
   }
 
   function updateQuantity(e, id) {
-    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
-      e.preventDefault();
-      let updateList = [...cartList];
-      updateList.map((item) => {
-        if (item.id === id && e.target.innerText === "+") {
-          item.quantity += 1;
-        }
-        if (item.id === id && e.target.innerText === "-") {
-          item.quantity -= 1;
-        }
-        setCartList(updateList);
-      });
-    }
+    let updateList = [...cartList];
+    updateList.map((item) => {
+      if (item.id === id && e.target.innerText === "+") {
+        item.quantity += 1;
+      }
+      if (item.id === id && e.target.innerText === "-") {
+        item.quantity -= 1;
+      }
+      setCartList(updateList);
+    });
   }
 
   return (

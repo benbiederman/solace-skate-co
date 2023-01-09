@@ -1,6 +1,8 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import styles from "./ShoppingCartItem.module.scss";
 
-const ShoppingCartItem = ({ data, removeItem }) => {
+const ShoppingCartItem = ({ data, removeItem, updateQuantity }) => {
   return (
     <section className={styles.cartItem}>
       <div className={styles.itemImg}>
@@ -29,10 +31,22 @@ const ShoppingCartItem = ({ data, removeItem }) => {
             x
           </button>
         ) : (
-          <button className={styles.itemBtn}>-</button>
+          <button
+            className={styles.itemBtn}
+            onKeyDown={(e) => updateQuantity(e, data.id)}
+            onClick={(e) => updateQuantity(e, data.id)}
+          >
+            -
+          </button>
         )}
         <input value={data.quantity} readOnly={true} />
-        <button className={styles.itemBtn}>+</button>
+        <button
+          className={styles.itemBtn}
+          onKeyDown={(e) => updateQuantity(e, data.id)}
+          onClick={(e) => updateQuantity(e, data.id)}
+        >
+          +
+        </button>
       </div>
     </section>
   );

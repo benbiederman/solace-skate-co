@@ -59,6 +59,22 @@ function App() {
     }
   }
 
+  function updateQuantity(e, id) {
+    if (e.type === "click" || (e.type === "keydown" && e.key === "Enter")) {
+      e.preventDefault();
+      let updateList = [...cartList];
+      updateList.map((item) => {
+        if (item.id === id && e.target.innerText === "+") {
+          item.quantity += 1;
+        }
+        if (item.id === id && e.target.innerText === "-") {
+          item.quantity -= 1;
+        }
+        setCartList(updateList);
+      });
+    }
+  }
+
   return (
     <Router>
       <div>
@@ -74,7 +90,13 @@ function App() {
             />
             <Route
               path="/cart"
-              element={<Cart cartList={cartList} removeItem={removeItem} />}
+              element={
+                <Cart
+                  cartList={cartList}
+                  removeItem={removeItem}
+                  updateQuantity={updateQuantity}
+                />
+              }
             />
           </Routes>
         </div>

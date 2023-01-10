@@ -18,6 +18,7 @@ const ItemPage = ({ addToCart }) => {
   const [variations, setVariations] = useState(location.state.variations);
   const [category, setCategory] = useState(location.state.category);
   const [productSuggestion, setProductSuggestion] = useState([]);
+  const [itemAdded, setItemAdded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,6 +42,7 @@ const ItemPage = ({ addToCart }) => {
     setInventory(activeItem.inventory);
     setActiveSize();
     setSizeQuantity();
+    setItemAdded(false);
   }, [activeItem]);
 
   useEffect(() => {
@@ -67,10 +69,11 @@ const ItemPage = ({ addToCart }) => {
     if (e.key === "Enter" || e.type === "click") {
       e.preventDefault();
       if (!activeSize) {
-        console.log(e);
         setSizeWarning(true);
       } else {
         addToCart(itemData.name, activeItem, activeSize, sizeQuantity);
+        setActiveSize();
+        setItemAdded(true);
       }
     }
   }
@@ -144,11 +147,13 @@ const ItemPage = ({ addToCart }) => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       setActiveSize(option.size);
+                      setItemAdded(false);
                       setSizeQuantity(option.quantity);
                     }
                   }}
                   onClick={(e) => {
                     setActiveSize(option.size);
+                    setItemAdded(false);
                     setSizeQuantity(option.quantity);
                   }}
                 >
@@ -171,7 +176,7 @@ const ItemPage = ({ addToCart }) => {
             onClick={itemBtnHandler}
             className={`${styles.cartBtn} primaryBtn`}
           >
-            Add to cart
+            {!itemAdded ? `Add to cart` : `Added!`}
           </button>
         </div>
 

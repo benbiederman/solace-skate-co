@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ShoppingSection from "../ShoppingSection/ShoppingSection";
+import ShoppingSection from "../../components/ShoppingSection/ShoppingSection";
 import styles from "./ItemPage.module.scss";
 import allProducts from "../../data/AllProducts";
 
@@ -19,6 +19,8 @@ const ItemPage = ({ addToCart }) => {
   const [category, setCategory] = useState(location.state.category);
   const [productSuggestion, setProductSuggestion] = useState([]);
   const [itemAdded, setItemAdded] = useState(false);
+
+  console.log(activeItem);
 
   useEffect(() => {
     window.scrollTo(0, 0);

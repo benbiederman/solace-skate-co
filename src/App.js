@@ -5,7 +5,7 @@ import Team from "./pages/Team/Team";
 import Shop from "./pages/Shop/Shop";
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
-import ItemPage from "./components/ItemPage/ItemPage";
+import ItemPage from "./pages/ItemPage/ItemPage";
 import Cart from "./pages/Cart/Cart";
 
 function App() {

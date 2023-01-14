@@ -12,41 +12,20 @@ function App() {
   const [cartList, setCartList] = useState([]);
 
   function addToCart(productName, productInfo, productSize, totalQuantity) {
-    let duplicate = false;
-    cartList.map((item) => {
-      if (
-        item.id === `${productInfo.id}-${productSize}` &&
-        item.quantity === totalQuantity
-      ) {
-        duplicate = true;
-        return;
-      }
-      if (
-        item.id === `${productInfo.id}-${productSize}` &&
-        item.quantity < totalQuantity
-      ) {
-        item.quantity++;
-        duplicate = true;
-        return;
-      }
-    });
+    let item = {
+      name: productName,
+      img: productInfo.img,
+      alt: productInfo.alt,
+      size: productSize,
+      color: productInfo.color,
+      price: productInfo.price,
+      salePrice: productInfo.salePrice,
+      quantity: 1,
+      totalAvailable: totalQuantity,
+      id: `${productInfo.id}-${productSize}`,
+    };
 
-    if (!duplicate) {
-      let item = {
-        name: productName,
-        img: productInfo.img,
-        alt: productInfo.alt,
-        size: productSize,
-        color: productInfo.color,
-        price: productInfo.price,
-        salePrice: productInfo.salePrice,
-        quantity: 1,
-        totalAvailable: totalQuantity,
-        id: `${productInfo.id}-${productSize}`,
-      };
-
-      setCartList((prevState) => [...prevState, item]);
-    }
+    setCartList((prevState) => [...prevState, item]);
   }
 
   function removeItem(e, id) {
@@ -84,7 +63,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route
               path="/shop/:url"
-              element={<ItemPage addToCart={addToCart} />}
+              element={<ItemPage addToCart={addToCart} cartList={cartList} />}
             />
             <Route
               path="/cart"

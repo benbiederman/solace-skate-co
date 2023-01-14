@@ -7,7 +7,7 @@ import allProducts from "../../data/AllProducts";
 
 import { v4 as uuidv4 } from "uuid";
 
-const ItemPage = ({ addToCart }) => {
+const ItemPage = ({ addToCart, cartList }) => {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(location.state.item);
   const [inventory, setInventory] = useState(activeItem.inventory);
@@ -19,8 +19,6 @@ const ItemPage = ({ addToCart }) => {
   const [category, setCategory] = useState(location.state.category);
   const [productSuggestion, setProductSuggestion] = useState([]);
   const [itemAdded, setItemAdded] = useState(false);
-
-  console.log(activeItem);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,6 +49,34 @@ const ItemPage = ({ addToCart }) => {
     setSizeWarning(false);
   }, [activeSize]);
 
+  const addItem = (productName, productInfo, productSize, totalQuantity) => {
+    let duplicateItem = false;
+
+    cartList.map((cartItem) => {
+      if (
+        cartItem.id === `${productInfo.id}-${productSize}` &&
+        cartItem.quantity === totalQuantity
+      ) {
+        duplicateItem = true;
+        return;
+      }
+      if (
+        cartItem.id === `${productInfo.id}-${productSize}` &&
+        cartItem.quantity < totalQuantity
+      ) {
+        cartItem.quantity++;
+        duplicateItem = true;
+        setActiveSize();
+        return;
+      }
+    });
+
+    if (!duplicateItem) {
+      addToCart(productName, productInfo, productSize, totalQuantity);
+      setActiveSize();
+    }
+  };
+
   const setSuggestions = (productArr) => {
     let products = [...productArr];
     let filteredAmount = window.innerWidth < 1024 ? 4 : 5;
@@ -73,9 +99,7 @@ const ItemPage = ({ addToCart }) => {
       if (!activeSize) {
         setSizeWarning(true);
       } else {
-        addToCart(itemData.name, activeItem, activeSize, sizeQuantity);
-        setActiveSize();
-        setItemAdded(true);
+        addItem(itemData.name, activeItem, activeSize, sizeQuantity);
       }
     }
   }

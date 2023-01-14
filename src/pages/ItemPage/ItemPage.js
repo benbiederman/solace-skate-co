@@ -66,6 +66,7 @@ const ItemPage = ({ addToCart, cartList }) => {
       ) {
         cartItem.quantity++;
         duplicateItem = true;
+        setItemAdded(true);
         setActiveSize();
         return;
       }
@@ -73,6 +74,7 @@ const ItemPage = ({ addToCart, cartList }) => {
 
     if (!duplicateItem) {
       addToCart(productName, productInfo, productSize, totalQuantity);
+      setItemAdded(true);
       setActiveSize();
     }
   };

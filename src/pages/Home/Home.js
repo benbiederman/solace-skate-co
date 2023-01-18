@@ -5,6 +5,7 @@ import ShoppingSection from "../../components/ShoppingSection/ShoppingSection";
 import Tees from "../../data/Tees";
 import Decks from "../../data/Decks";
 import { useEffect, useState } from "react";
+import TeamSection from "../../components/TeamSection/TeamSection";
 
 const Home = () => {
   const [tees, setTees] = useState();
@@ -52,6 +53,7 @@ const Home = () => {
         filteredData={tees}
         cta={true}
       />
+      <TeamSection />
     </main>
   );
 };

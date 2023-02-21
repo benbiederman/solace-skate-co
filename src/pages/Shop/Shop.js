@@ -48,7 +48,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <main>
+    <main id="main">
       <ShoppingSectionHeader
         changeCategory={changeCategory}
         category={category}

@@ -30,9 +30,21 @@ const Navigation = ({ cartList }) => {
     }
   }, []);
 
+  const skipBtnHandler = (e) => {
+    if ((e.type === "onKeyDown" && e.code === "Enter") || e.type === "click") {
+      document.location = "#main";
+    }
+  };
+
   return (
     <header className={headerActive ? styles.headerActive : null}>
-      <button className={styles.skipBtn}>Skip to content</button>
+      <button
+        onClick={(e) => skipBtnHandler(e)}
+        onKeyDown={(e) => skipBtnHandler(e)}
+        className={styles.skipBtn}
+      >
+        Skip to content
+      </button>
       <Link to="/" onClick={linkClick}>
         <img src={logo} alt="Solace Skate Co. logo" />
       </Link>

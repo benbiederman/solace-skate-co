@@ -6,16 +6,9 @@ const TeamMember = ({ data }) => {
   const url = data.name.replaceAll(" ", "-").toLowerCase();
 
   return (
-    <Link
-      to={`/team/${url}`}
-      state={{
-        allData: data,
-      }}
-      className={`${styles.teamMember} ${url}`}
-      tabIndex={0}
-    >
+    <section className={`${styles.teamMember} ${url}`}>
       <h4>{name}</h4>
-    </Link>
+    </section>
   );
 };
 

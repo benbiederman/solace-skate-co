@@ -106,7 +106,7 @@ header {
     min-height: 40vh;
     width: 100%;
     background-color: $black;
-    @include flex(column, center, center);
+    @include flex(column, flex-start, center);
     padding: 1vh 0;
     transform: translateX(100%);
     transition: transform 0.25s ease;

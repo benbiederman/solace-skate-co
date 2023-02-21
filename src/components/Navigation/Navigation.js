@@ -53,13 +53,6 @@ const Navigation = ({ cartList }) => {
           Home
         </Link>
         <Link
-          to="/team"
-          onClick={linkClick}
-          tabIndex={headerActive ? "0" : "-1"}
-        >
-          Team
-        </Link>
-        <Link
           to="/shop"
           onClick={linkClick}
           tabIndex={headerActive ? "0" : "-1"}

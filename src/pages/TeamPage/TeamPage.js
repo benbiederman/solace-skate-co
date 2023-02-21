@@ -1,9 +1,16 @@
-const teamPage = () => {
+import { useLocation } from "react-router-dom";
+
+const TeamPage = () => {
+  const location = useLocation();
+  const data = location.state.allData;
+
   return (
     <main>
-      <h1>Team page</h1>
+      <figure>
+        <img src={data.img} alt={data.alt} />
+      </figure>
     </main>
   );
 };
 
-export default teamPage;
+export default TeamPage;

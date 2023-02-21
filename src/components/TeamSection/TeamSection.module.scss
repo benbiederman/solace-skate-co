@@ -11,3 +11,20 @@
     margin-bottom: 2.5vh;
   }
 }
+
+.curved {
+  position: relative;
+  background: $white;
+  height: 5vh;
+}
+
+.curved::after {
+  content: "";
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $black;
+  height: 2.5vh;
+}

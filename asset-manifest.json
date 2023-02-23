@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/solace-skate-co/static/css/main.84ba56a9.css",
-    "main.js": "/solace-skate-co/static/js/main.1f415bd1.js",
+    "main.js": "/solace-skate-co/static/js/main.e089842a.js",
     "static/js/787.d905e516.chunk.js": "/solace-skate-co/static/js/787.d905e516.chunk.js",
     "static/media/hero-img.png": "/solace-skate-co/static/media/hero-img.f1ca6a138778150f6abb.png",
     "static/media/jake-keith.jpg": "/solace-skate-co/static/media/jake-keith.2ea75ce8cf4c33be41a3.jpg",
@@ -59,11 +59,11 @@
     "index.html": "/solace-skate-co/index.html",
     "static/media/shopping-cart.svg": "/solace-skate-co/static/media/shopping-cart.1750b916bd48a0017d3ea543073fbab0.svg",
     "main.84ba56a9.css.map": "/solace-skate-co/static/css/main.84ba56a9.css.map",
-    "main.1f415bd1.js.map": "/solace-skate-co/static/js/main.1f415bd1.js.map",
+    "main.e089842a.js.map": "/solace-skate-co/static/js/main.e089842a.js.map",
     "787.d905e516.chunk.js.map": "/solace-skate-co/static/js/787.d905e516.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84ba56a9.css",
-    "static/js/main.1f415bd1.js"
+    "static/js/main.e089842a.js"
   ]
 }
